@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>진우주 운명 성격검사</title>
-<meta name="description" content="사주로 태어난 행성을, 50문항으로 지금의 궤도를 찾는 진우주 운명 성격검사">
+<meta name="description" content="사주로 태어난 행성을, 50문항으로 우주선에서 맡은 역할을 찾는 진우주 운명 성격검사">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
@@ -333,6 +333,118 @@ footer{margin-top:30px;text-align:center;font-size:12.5px;color:var(--muted)}
 .mchip span{display:flex;flex-direction:column;flex:1;line-height:1.3} .mchip b{font-size:14.5px} .mchip small{font-size:11.5px;color:var(--muted)}
 .mchip em{font-style:normal;font-family:var(--disp);font-size:20px}
 .tcell .sc{font-size:10.5px;font-family:var(--disp)}
+/* ───── v5: 크루 역할 · 바로 보기 · 오늘 · 관측 · 크루 · 이스터에그 ───── */
+.intro{position:relative}
+.teacup-planet{position:absolute;right:0;top:-8px;width:48px;height:48px;padding:0;border:0;background:none;cursor:pointer;opacity:.9;border-radius:50%}
+.teacup-planet:hover{opacity:1}
+.role-row{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-top:16px}
+.role-row span{display:inline-flex;align-items:center;gap:5px;font-size:13px;color:var(--ink-2);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:3px 11px 3px 4px}
+.btn.sm{font-size:15px;padding:10px 16px}
+.btn:disabled{opacity:.45;cursor:default;transform:none}
+.btn-link.inline{padding:0 2px;font-size:inherit;color:var(--pri)}
+.hero .formal{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:-2px;font-size:15px;color:var(--ink-2);flex-wrap:wrap}
+.hero .formal .dot{color:var(--muted)}
+.tiles.t2{grid-template-columns:1fr 1fr}
+@media (max-width:560px){.tiles.t2{grid-template-columns:1fr}}
+.lite-cta{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.lite-cta p{font-size:14.5px;color:var(--ink-2);flex:1;min-width:200px}
+.saved-note{text-align:center;font-size:13px;color:var(--muted);margin-top:14px}
+.saved-note .btn-link{font-size:13px;padding:4px}
+.crew-cta-in{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;background:linear-gradient(135deg,#1B1430,#121A2C);border:1px solid var(--line-2);border-radius:var(--r-sm);padding:14px 16px;flex-wrap:wrap}
+.friend .grid2{gap:8px}
+.field .lab{font-family:var(--disp);font-size:15px;color:var(--ink-2)}
+/* 바로 보기 */
+.pick-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+@media (max-width:460px){.pick-grid{grid-template-columns:repeat(3,1fr)}}
+.pick{appearance:none;font:inherit;color:var(--ink);background:var(--card-2);border:1.5px solid var(--line-2);border-radius:16px;padding:10px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;line-height:1.3;text-align:center}
+.pick span{font-family:var(--disp);font-size:15px}
+.pick small{font-size:11.5px;color:var(--muted)}
+.pick[aria-pressed="true"]{border-color:var(--pri);background:var(--pri-soft)}
+.pick[aria-pressed="true"] small{color:var(--pri)}
+.finder{margin-top:10px}
+.finder .time-row{margin-top:8px}
+/* 오늘 홈 */
+.home-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media (max-width:600px){.home-grid{grid-template-columns:1fr}}
+.home-grid .card{margin-top:0}
+.home-card{display:flex;flex-direction:column;gap:10px}
+.home-card .btn{align-self:flex-start;margin-top:auto}
+.hc-h{display:flex;align-items:center;gap:10px}
+.hc-h h3{font-family:var(--disp);font-size:19px;line-height:1.3}
+.hc-h small{display:block;font-size:12.5px;color:var(--muted)}
+.mini-seats{display:flex;gap:6px;flex-wrap:wrap}
+.mini-seats span{display:inline-flex;align-items:center;gap:3px;font-size:12.5px;color:var(--ink-2);background:var(--card-2);border-radius:999px;padding:2px 9px 2px 3px}
+.home-links{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 8px;margin-top:18px}
+.home-links .btn-link{font-size:14px}
+/* 관측 */
+.obs-card .fc-card{min-height:96px}
+.obs-card .fc-t{font-size:16.5px}
+.obs-big{display:flex;justify-content:center;margin:12px 0 4px}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:6px}
+.week .day{display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 0;border-radius:12px;background:var(--card-2)}
+.week .day.today{outline:1.5px solid var(--pri)}
+.week .day small{font-size:12px;color:var(--muted)}
+.week .nodata{width:30px;height:30px;border-radius:50%;border:1.5px dashed var(--line-2)}
+.mission{margin-top:12px;background:#15201A;border:1px solid #2C4A3A}
+/* 크루 */
+.crew-add{display:grid;grid-template-columns:1.2fr 1fr 1fr auto;gap:8px;margin-top:14px}
+@media (max-width:560px){.crew-add{grid-template-columns:1fr 1fr}.crew-add input{grid-column:1 / -1}.crew-add .btn{grid-column:1 / -1}}
+.crew-meta{display:flex;justify-content:space-between;align-items:center;margin-top:4px;min-height:34px}
+.members{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-direction:column;gap:6px}
+.members li{display:flex;align-items:center;gap:10px;background:var(--card-2);border-radius:14px;padding:8px 10px}
+.members .mn{flex:1;display:flex;flex-direction:column;line-height:1.35;min-width:0}
+.members .mn b{font-size:15.5px}
+.members .mn small{font-size:12.5px;color:var(--muted)}
+.icon-btn.sm{width:34px;height:34px;font-size:16px}
+.seats{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:14px}
+@media (max-width:520px){.seats{grid-template-columns:repeat(3,1fr)}}
+.seat{background:var(--card-2);border:1.5px solid transparent;border-radius:14px;padding:10px 4px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:2px}
+.seat b{font-family:var(--disp);font-weight:400;font-size:14.5px}
+.seat .cnt{font-family:var(--disp);font-size:12.5px;color:var(--pri)}
+.seat small{font-size:12px;color:var(--ink-2);line-height:1.35;word-break:keep-all}
+.seat.empty{border:1.5px dashed var(--line-2);background:transparent}
+.seat.empty .cnt{color:var(--muted)}
+.crew-title{font-family:var(--disp);font-size:clamp(24px,6vw,30px);line-height:1.25;margin-top:8px}
+.crew-chem{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;margin:16px auto 0;max-width:420px;text-align:left}
+.crew-chem .meter{position:relative;width:92px;height:92px}
+.crew-chem .meter b{position:absolute;inset:0;display:grid;place-items:center;font-size:26px}
+.crew-chem h4{margin:0;font-family:var(--disp);font-weight:400;font-size:19px}
+.crew-chem p{font-size:14px;color:var(--ink-2);margin-top:2px}
+.duo{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;background:var(--card-2);border-radius:14px;padding:10px 12px;margin-top:8px}
+.duo-b{display:flex}
+.duo-b .rbadge + .rbadge{margin-left:-8px}
+.duo .who{font-family:var(--disp);font-size:15.5px}
+.duo p{font-size:13.5px;color:var(--ink-2);margin-top:2px}
+.duo em{font-style:normal;font-family:var(--disp);font-size:22px}
+.jobs{list-style:none;padding:0;margin:6px 0 0}
+.jobs li{display:flex;align-items:center;gap:8px;padding:9px 0;border-top:1px dashed var(--line-2);font-size:14.5px}
+.jobs li:first-child{border-top:0}
+.jobs .jb{font-family:var(--disp);color:var(--pri);min-width:118px}
+.miss{list-style:none;padding:0;margin:6px 0 0}
+.miss li{display:flex;gap:8px;align-items:flex-start;font-size:14.5px;padding:6px 0}
+/* 모달 · 이스터에그 */
+.modal-back{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.74);display:flex;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto}
+.modal{width:100%;max-width:440px;margin:auto;background:#0E1810;border:1px solid #2E4A34;border-radius:26px;padding:24px 22px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.modal h2{font-family:var(--disp);font-size:26px;margin-top:6px;color:#DDF5D8}
+.modal p{font-size:15px;color:#C4D8C0;margin-top:8px}
+.modal .poem{font-family:var(--hanja);font-weight:700;font-size:15.5px;line-height:1.95;color:#E9F7E4;background:rgba(124,191,106,.08);border:1px solid #2E4A34;border-radius:18px;padding:16px;margin-top:14px;white-space:pre-line}
+.modal .poem b{display:block;font-family:var(--disp);font-weight:400;font-size:17px;color:#A8E0A0;margin-bottom:2px}
+.modal .sig{font-size:13.5px;color:#9DBE97}
+.modal .hint{font-size:13px;color:#7E9C79;margin-top:14px}
+.modal .eb{display:table;margin:4px auto 0;font-family:var(--disp);font-size:14px;color:#A8E0A0;border:1px solid #2E4A34;border-radius:999px;padding:2px 12px}
+.modal .row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.modal .btn.pri{background:#A8E0A0;color:#08170B;box-shadow:none}
+.modal .btn.soft{background:#18291A;color:#A8E0A0}
+.logo{-webkit-touch-callout:none;user-select:none;-webkit-user-select:none;touch-action:manipulation}
+.logo.steeping #logo-mark{animation:steep 2.2s ease-in forwards}
+@keyframes steep{to{filter:drop-shadow(0 0 8px #7CBF6A) hue-rotate(-60deg) saturate(1.5)}}
+body.nok{--pri:#A8E0A0;--pri-soft:#172A1B;--pri-2:#7CC47A;--pri-ink:#08170B}
+body.nok .sky i{background:#D6F5CF}
+body.nok .hero{background:radial-gradient(120% 70% at 50% 0%,#15301C 0%,var(--card) 60%)}
+body.nok .track .fill{background:linear-gradient(90deg,#CDEBCF,#7CBF6A)}
+.leaf{position:fixed;top:-24px;z-index:75;pointer-events:none;animation-name:leaf;animation-timing-function:linear;animation-fill-mode:forwards}
+@keyframes leaf{to{transform:translate(var(--dx),110vh) rotate(var(--rot))}}
+@media (prefers-reduced-motion: reduce){.logo.steeping #logo-mark{animation:none;filter:drop-shadow(0 0 6px #7CBF6A)}}
 </style>
 </head>
 <body>
@@ -342,16 +454,18 @@ footer{margin-top:30px;text-align:center;font-size:12.5px;color:var(--muted)}
 
   <!-- 인트로 -->
   <section class="screen intro" id="s-intro">
+    <button class="teacup-planet float" id="egg-cup" aria-label="작은 초록 행성"></button>
     <span class="eyebrow">진우주 운명 성격검사</span>
     <div class="planet-row" id="planet-row"></div>
-    <h1 class="disp">나는 어느 별에서 태어나<br>어느 궤도를 돌고 있을까?</h1>
-    <p class="lead">사주로 <b>태어난 행성</b>을, 50문항으로 <b>지금의 궤도</b>를 찾아 25가지 운명 유형 중 하나로 알려드려요.</p>
-    <div class="cta"><button class="btn pri" id="go-birth">내 행성 찾으러 가기</button><button class="btn-link" id="go-sample">샘플 결과 먼저 보기</button></div>
-    <div class="facts"><span>50문항</span><span>약 7분</span><span>25유형 · 100세부유형</span></div>
+    <h1 class="disp">나는 어느 별 출신,<br>어떤 크루일까?</h1>
+    <p class="lead">사주로 <b>태어난 행성</b>을, 50문항으로 <b>우주선에서 맡은 역할</b>을 찾아 25가지 크루 유형 중 하나로 알려드려요.</p>
+    <div class="role-row" id="role-row"></div>
+    <div class="cta"><button class="btn pri" id="go-birth">50문항으로 내 크루 찾기</button><button class="btn soft" id="go-pick">내 유형 알아요 · 바로 보기</button><button class="btn-link" id="go-sample">샘플 결과 먼저 보기</button></div>
+    <div class="facts"><span>50문항</span><span>약 7분</span><span>5행성 × 5역할 = 25유형</span></div>
     <details class="how card"><summary>어떻게 만든 검사인가요?</summary><div class="inner"><ul>
       <li>성격 점수는 HEXACO 6요인 모델과 강화민감성이론(BIS/BAS)을 바탕으로 새로 만든 문항으로 측정해요.</li>
       <li>사주는 ‘타고난 결’을 읽는 문화적 서사로 보여드려요. 과학적으로 검증된 성격 예측 도구는 아니에요.</li>
-      <li>유형은 두 레이어의 <b>관계</b>로 정해져서, 심리 점수 자체의 의미는 사주와 상관없이 유지돼요.</li>
+      <li>유형은 출신 행성(사주)과 크루 역할(검사)의 <b>조합</b>이라, 성격 점수의 의미는 사주와 상관없이 유지돼요.</li>
     </ul></div></details>
   </section>
 
@@ -360,7 +474,7 @@ footer{margin-top:30px;text-align:center;font-size:12.5px;color:var(--muted)}
     <div class="card form-card">
       <div class="peek float" id="peek"></div>
       <h2 class="disp">태어난 순간을 알려주세요</h2>
-      <p class="muted small">이 페이지 안에서만 계산하고, 어디에도 저장하지 않아요.</p>
+      <p class="muted small">생년월일은 이 페이지 안에서만 계산하고 저장하지 않아요. 결과 유형만 이 기기에 남겨요.</p>
       <div class="field"><label for="f-name">이름 또는 닉네임 <span class="muted">(선택)</span></label><input type="text" id="f-name" maxlength="20" placeholder="결과지에 표시돼요" autocomplete="nickname"></div>
       <div class="grid2">
         <div class="field"><label for="f-date">생년월일 (양력)</label><input type="date" id="f-date" min="1900-01-01"></div>
@@ -378,7 +492,7 @@ footer{margin-top:30px;text-align:center;font-size:12.5px;color:var(--muted)}
         </select>
       </div>
       <details style="margin-top:16px"><summary>명리 계산 방식 (고급)</summary><div class="inner">
-        <label class="opt-line"><input type="checkbox" id="f-solar" checked><span>진태양시 보정 — 출생지 경도로 태양시를 구해요 (서울 약 −32분)</span></label>
+        <label class="opt-line"><input type="checkbox" id="f-solar" checked><span>태양시 보정 — 출생지 경도만큼 시각을 옮겨요 (서울 약 −32분)</span></label>
         <label class="opt-line"><input type="checkbox" id="f-yajasi"><span>야자시 적용 — 23~24시 출생이면 날짜를 넘기지 않아요</span></label>
       </div></details>
       <p class="note">음력 생일만 안다면 <a href="https://astro.kasi.re.kr/life/pageView/8" target="_blank" rel="noopener">한국천문연구원 음양력 변환</a>에서 양력으로 바꿔 주세요. 해외에서 태어났다면 태어난 시각을 한국 시각으로 바꿔 입력해 주세요. 서머타임(1948~60, 1987~88년)과 표준시 변경은 자동으로 반영돼요.</p>
@@ -428,13 +542,43 @@ footer{margin-top:30px;text-align:center;font-size:12.5px;color:var(--muted)}
 
   <!-- 계산 중 -->
   <section class="screen" id="s-loading" hidden>
-    <div class="loading"><div id="load-art"></div><p id="loading-msg">궤도 계산 중…</p></div>
+    <div class="loading"><div id="load-art"></div><p id="loading-msg">크루 배치 중…</p></div>
   </section>
+
+  <!-- 바로 보기 (검사 없이 유형 고르기) -->
+  <section class="screen" id="s-pick" hidden>
+    <div class="card form-card">
+      <div class="peek float" id="peek2"></div>
+      <h2 class="disp">내 유형 바로 보기</h2>
+      <p class="muted small">이미 아는 출신 행성과 역할을 고르면 검사 없이 바로 보여드려요.</p>
+      <div class="field"><label for="p-name">이름 또는 닉네임 <span class="muted">(선택)</span></label><input type="text" id="p-name" maxlength="20" placeholder="결과지에 표시돼요" autocomplete="nickname"></div>
+      <div class="field"><span class="lab">출신 행성</span><div class="pick-grid" id="p-planets" role="group" aria-label="출신 행성"></div>
+        <details class="finder"><summary>행성을 모르겠어요 · 생일로 찾기</summary><div class="inner">
+          <div class="time-row"><input type="date" id="p-date" min="1900-01-01" aria-label="생년월일 (양력)"><button type="button" class="btn soft sm" id="p-find">찾기</button></div>
+          <label class="opt-line"><input type="checkbox" id="p-late"><span>밤 11시 반 이후에 태어났어요</span></label>
+          <p class="small muted" id="p-found" role="status"></p>
+        </div></details>
+      </div>
+      <div class="field"><span class="lab">크루 역할</span><div class="pick-grid" id="p-roles" role="group" aria-label="크루 역할"></div>
+        <p class="small muted" style="margin-top:6px">역할을 모르면 <button type="button" class="btn-link inline" id="p-to-test">50문항 검사</button>로 찾아요.</p></div>
+      <p class="err" id="pick-err" role="alert"></p>
+      <div class="row-end"><button class="btn soft" id="pick-back">이전</button><button class="btn pri" id="pick-go">결과 보기</button></div>
+    </div>
+  </section>
+
+  <!-- 오늘 (저장된 유형이 있으면 첫 화면) -->
+  <section class="screen" id="s-home" hidden></section>
+
+  <!-- 오늘의 관측 -->
+  <section class="screen" id="s-obs" hidden></section>
+
+  <!-- 우리 크루 -->
+  <section class="screen" id="s-crew" hidden></section>
 
   <!-- 결과 -->
   <section class="screen" id="s-result" hidden></section>
 
-  <footer>진우주 운명 성격검사 v0.4 · 잠정 규준 · 자기이해와 재미를 위한 도구예요. 진단이나 채용 판단에는 쓰지 마세요.</footer>
+  <footer>진우주 운명 성격검사 v0.5 · 잠정 규준 · 자기이해와 재미를 위한 도구예요. 진단이나 채용 판단에는 쓰지 마세요.</footer>
 </main>
 <div class="tip" id="tip" role="tooltip"></div>
 <div class="toast" id="toast" role="status"></div>
@@ -602,12 +746,12 @@ var Saju = (function () {
     var tStart = findTermUTC(start, r.utc - 15 * 86400000), tNext = findTermUTC(next, r.utc + 15 * 86400000);
     var dStart = (r.utc - tStart) / MIN, dNext = (tNext - r.utc) / MIN;
     var near = dStart <= dNext ? { deg: start, t: tStart, d: dStart, side: 'after' } : { deg: next, t: tNext, d: dNext, side: 'before' };
-    var termInfo = { name: TERM_NAMES[near.deg], kstTime: near.t + 9 * HOUR, minutes: near.d, side: near.side };
+    var termInfo = { name: TERM_NAMES[near.deg], kstTime: near.t + offsetAt(near.t), minutes: near.d, side: near.side };
     if (near.d <= 30) {
       var probe = near.side === 'after' ? near.t - MIN : near.t + MIN;
       var A = core(probe, solarMs, known, opts.yajasi);
       flags.push({ kind: 'term', title: termInfo.name + ' 경계', minutes: Math.round(near.d),
-        msg: termInfo.name + '(' + hm(near.t + 9 * HOUR) + ')' + (near.side === 'after' ? iga(termInfo.name) + ' 지나고 ' + Math.max(1, Math.round(near.d)) + '분 뒤에' : '보다 ' + Math.max(1, Math.round(near.d)) + '분 먼저') + ' 태어났어요. 출생 기록이 조금만 달라도 ' + (A.year.text !== P.year.text ? '연주와 ' : '') + '월주가 바뀌는 자리예요.',
+        msg: termInfo.name + '(' + hm(near.t + offsetAt(near.t)) + ')' + (near.side === 'after' ? iga(termInfo.name) + ' 지나고 ' + Math.max(1, Math.round(near.d)) + '분 뒤에' : '보다 ' + Math.max(1, Math.round(near.d)) + '분 먼저') + ' 태어났어요. 출생 기록이 조금만 달라도 ' + (A.year.text !== P.year.text ? '연주와 ' : '') + '월주가 바뀌는 자리예요.',
         alt: (A.year.text !== P.year.text ? A.year.text + '년 ' : '') + A.month.text + '월' });
     }
     // 2) 서머타임·표준시 전환
@@ -639,11 +783,22 @@ var Saju = (function () {
           msg: '23시대(자시 앞부분)에 태어나서, 날짜를 언제 넘기느냐에 따라 일주가 달라져요. 지금은 ' + (opts.yajasi ? '야자시(날짜 유지)' : '자시에 날짜를 넘기는 방식') + '으로 계산했어요.',
           alt: D.day.text + '일 ' + D.hour.text + '시' });
       }
-      // 5) 진태양시 보정 여부
+      // 4-1) 야자시 자정 경계 ±10분 (야자시에서는 자정에 날짜가 넘어가요)
+      if (opts.yajasi && (mOfDay < 10 || mOfDay > 1430)) {
+        var toMid = mOfDay < 10 ? -(mOfDay + 1) : (1440 - mOfDay + 1);
+        var F = core(r.utc, solarMs + toMid * MIN, known, opts.yajasi);
+        if (F.day.text !== P.day.text) {
+          var mm = Math.max(1, Math.round(mOfDay < 10 ? mOfDay : 1440 - mOfDay));
+          flags.push({ kind: 'midnight', title: '자정 경계', minutes: mm,
+            msg: '야자시에서는 자정에 날짜가 넘어가요. 태양시로 자정 ' + (mOfDay < 10 ? '지나고 ' + mm + '분' : mm + '분 전') + '이라 기록이 몇 분만 달라도 일주가 바뀌어요.',
+            alt: F.day.text + '일 ' + F.hour.text + '시' });
+        }
+      }
+      // 5) 태양시 보정 여부
       var E = core(r.utc, solarClock(r, lon, !opts.noSolarCorrection), known, opts.yajasi);
       if (E.hour.text !== P.hour.text || E.day.text !== P.day.text) {
         flags.push({ kind: 'solar', quiet: true, title: '보정 방식',
-          msg: '진태양시 보정을 ' + (opts.noSolarCorrection ? '켜면' : '끄면') + ' 시주' + (E.day.text !== P.day.text ? '와 일주' : '') + '가 달라져요. 명리 학파마다 보정 여부가 갈리는 부분이에요.',
+          msg: '태양시 보정을 ' + (opts.noSolarCorrection ? '켜면' : '끄면') + ' 시주' + (E.day.text !== P.day.text ? '와 일주' : '') + '가 달라져요. 명리 학파마다 보정 여부가 갈리는 부분이에요.',
           alt: (E.day.text !== P.day.text ? E.day.text + '일 ' : '') + E.hour.text + '시' });
       }
     }
@@ -724,7 +879,7 @@ function mascotAt(e, x, y, size, face) { // SVG 안에 중첩
   return '<svg x="' + (x - size / 2) + '" y="' + (y - size / 2) + '" width="' + size + '" height="' + size + '" viewBox="-50 -52 100 100" overflow="visible">' + mascotInner(e, face) + '</svg>';
 }
 
-/* 현재 궤도(후천 주 성향)별 강점 · 주의 · 무대 */
+/* 크루 역할(후천 주 성향)별 강점 · 주의 · 무대 */
 var HU = [
   { strengths: ['말하지 않아도 분위기를 먼저 알아채는 공감 센서가 있어요.', '갈등이 생기면 자연스럽게 완충재 역할을 맡아요.', '곁에 있으면 이상하게 다들 자라요. 사람을 키우는 재주.'],
     watch: ['‘괜찮아’가 입버릇이라 내 서운함은 뒤로 밀려요.', '거절을 미루다 보면 일정이 남의 부탁으로 꽉 차요.', '모두에게 좋은 사람이려다 나에게 제일 박해져요.'],
@@ -743,10 +898,10 @@ var HU = [
     stage: '새로운 문제를 푸는 자리 — 연구·기획·콘텐츠·전략' }
 ];
 
-/* 태생 행성과 현재 궤도의 관계 = 십성 */
+/* 출신 행성과 크루 역할의 관계 = 십성 */
 var REL = {
-  bi:   { name: '자전형', hz: '自轉', god: '비겁', one: '태생과 궤도가 같은 행성',
-          text: '타고난 결 그대로 자라온 사람이에요. 겉과 속, 과거와 지금이 한결같아서 캐릭터가 뚜렷해요. 다른 궤도를 도는 사람에게 배우는 시간이 균형을 잡아줘요.' },
+  bi:   { name: '자전형', hz: '自轉', god: '비겁', one: '출신과 역할의 기운이 같음',
+          text: '타고난 결 그대로 자라온 사람이에요. 겉과 속, 과거와 지금이 한결같아서 캐릭터가 뚜렷해요. 다른 역할을 맡은 사람에게 배우는 시간이 균형을 잡아줘요.' },
   sik:  { name: '발광형', hz: '發光', god: '식상', one: '타고난 기운이 흘러나와 만든 성격',
           text: '타고난 에너지가 자연스럽게 흘러나와 지금의 성격이 됐어요. 그래서 표현이 편안하고 꾸밈이 없어요. 발산만 하면 방전되니 채우는 루틴을 챙겨 주세요.' },
   jae:  { name: '인력형', hz: '引力', god: '재성', one: '타고난 기질이 지금의 성향을 끌어다 씀',
@@ -770,43 +925,79 @@ var STEM_INFO = [
   ['빗방울', '조용히 스며드는 지혜. 한 방울씩이지만 결국 바위도 뚫어요.']
 ];
 
+/* ───────── 크루 역할 ─────────
+   역할 = 검사에서 가장 두드러진 성향. 순서는 오행(木火土金水)과 같아요 */
+var ROLE = [
+  { name: '정원사', verb: '사람을 키워요', does: '크루를 키우는', trait: '우호성' },
+  { name: '선장', verb: '판을 벌여요', does: '판을 벌이는', trait: '외향성' },
+  { name: '관제사', verb: '판을 지켜요', does: '판을 지키는', trait: '정직·겸손' },
+  { name: '항해사', verb: '항로를 짜요', does: '항로를 짜는', trait: '성실성' },
+  { name: '탐험가', verb: '씨앗을 찾아와요', does: '새 씨앗을 찾아오는', trait: '개방성' }
+];
+/* 역할 아이콘 (선 그림 경로, SVG와 캔버스에서 같이 씀 · 좌표 -12~12)
+   물뿌리개 · 조타륜 · 헤드셋 · 나침반 · 돋보기 */
+var ROLE_ICON = [
+  ['M-7,-1 h9 v8 a1.5,1.5 0 0 1 -1.5,1.5 h-6 a1.5,1.5 0 0 1 -1.5,-1.5 Z', 'M2,1 L8,-5', 'M6.5,-6.5 L9.5,-3.5', 'M-7,1 C-10.5,1 -10.5,6 -7,6', 'M-5,-1 C-5,-6 0,-6 0,-1'],
+  ['M5,0 A5,5 0 1 0 -5,0 A5,5 0 1 0 5,0', 'M1.6,0 A1.6,1.6 0 1 0 -1.6,0 A1.6,1.6 0 1 0 1.6,0', 'M0,-1.6 V-9 M0,1.6 V9 M-1.6,0 H-9 M1.6,0 H9 M1.1,-1.1 L6.4,-6.4 M-1.1,1.1 L-6.4,6.4 M-1.1,-1.1 L-6.4,-6.4 M1.1,1.1 L6.4,6.4'],
+  ['M-7,2 A7,7 0 0 1 7,2', 'M-9,1 h3 v6 h-3 Z', 'M6,1 h3 v6 h-3 Z', 'M-7.5,7 C-7.5,10 -4,10.5 -1.5,10.5', 'M0.8,10.5 A1.2,1.2 0 1 0 -1.6,10.5 A1.2,1.2 0 1 0 0.8,10.5'],
+  ['M8,0 A8,8 0 1 0 -8,0 A8,8 0 1 0 8,0', 'M0,-5.5 L2,0 L0,5.5 L-2,0 Z', 'M0,-8 V-6.5 M0,8 V6.5 M-8,0 H-6.5 M8,0 H6.5'],
+  ['M3,-2 A5,5 0 1 0 -7,-2 A5,5 0 1 0 3,-2', 'M1.6,1.6 L8,8', 'M-4.5,-4 Q-3,-5.5 -1,-5.5']
+];
+function iconPaths(d) { return ROLE_ICON[d].map(function (p) { return '<path d="' + p + '"/>'; }).join(''); }
+function roleIcon(d, size, color) {
+  return '<svg width="' + size + '" height="' + size + '" viewBox="-12 -12 24 24" aria-hidden="true" style="flex:none"><g fill="none" stroke="' + (color || 'currentColor') + '" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">' + iconPaths(d) + '</g></svg>';
+}
+/* 역할 배지: 역할 색 원 + 아이콘 (SVG 안에 넣는 조각) */
+function roleBadgeInner(d, r) {
+  var k = r / 14;
+  return '<circle r="' + r + '" fill="' + BODY[d] + '" stroke="' + DEEP[d] + '" stroke-opacity=".5" stroke-width="' + (1.5 * k).toFixed(2) + '"/>' +
+    '<g transform="scale(' + (k * 0.95).toFixed(3) + ')" fill="none" stroke="#2A2D4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + iconPaths(d) + '</g>';
+}
+function roleBadge(d, size) { return '<svg class="rbadge" width="' + size + '" height="' + size + '" viewBox="-15 -15 30 30" aria-hidden="true" style="flex:none">' + roleBadgeInner(d, 14) + '</svg>'; }
+function jo(w, a, b) { var c = w.charCodeAt(w.length - 1) - 0xAC00; return w + ((c >= 0 && c <= 11171 && c % 28) ? a : b); }
+
+/* 25가지 크루 유형: TYPES[출신 행성][역할] = [칭호, 한 줄, 설명]
+   칭호는 뜻을 따질 필요 없는 의태어라 부르기 쉬워요: "뚝딱뚝딱 항해사" */
 var TYPES = [
   [
-    ['숲의 목성', '목목, 읽으면 ‘묵묵’. 말없이 곁을 지키다 보면 주변이 숲이 돼요.', '성장시키는 기운을 타고나, 실제로도 공감과 배려로 사람을 키우며 살아왔어요.'],
-    ['꽃 피운 목성', '목화, 그러니까 목화솜. 포근한데 불붙으면 순식간에 활활.', '위로 뻗는 성장 에너지가 사람들 앞에서 표현과 열정으로 피어났어요. ‘시작’ 버튼은 대체로 당신 몫.'],
-    ['뿌리 깊은 목성', '뿌리 깊은 나무는 태풍에도 안 뽑혀요. 신뢰를 적금처럼 쌓는 사람.', '뻗어 나가는 기질이 정직과 겸손을 뿌리로 끌어다 썼어요. 오래 볼수록 가치가 오르는 사람.'],
-    ['다듬어진 목성', '목금, 목요일과 금요일. 한 주의 마무리는 결국 당신 몫.', '자유롭게 뻗고 싶은 나무에 원칙이라는 가위가 닿아 모양 좋은 나무가 됐어요.'],
-    ['강가의 목성', '목수. 재고 또 재며 궁금해하다가 결국 뭔가를 지어내요.', '호기심과 탐구가 강물처럼 흘러들어 성장의 양분이 돼요. 배울수록 자라는 선순환형.']
+    ['쑥쑥', '곁에만 있어도 주변 사람들이 쑥쑥 자라요.', '성장시키는 기운을 타고나, 실제로도 공감과 배려로 사람을 키우며 살아왔어요.'],
+    ['싱글벙글', '웃으면서 판을 벌이는데 다들 따라와요.', '위로 뻗는 성장 에너지가 사람들 앞에서 표현과 열정으로 피어났어요. ‘시작’ 버튼은 대체로 당신 몫.'],
+    ['또박또박', '할 말은 또박또박, 약속은 꼬박꼬박.', '뻗어 나가는 기질이 정직과 겸손을 뿌리로 끌어다 썼어요. 오래 볼수록 가치가 오르는 사람.'],
+    ['사각사각', '연필 소리 나게 계획을 짜는 다정한 설계자.', '자유롭게 뻗고 싶은 나무에 원칙이라는 가위가 닿아 모양 좋은 나무가 됐어요.'],
+    ['쫑긋쫑긋', '궁금한 게 생기면 귀부터 쫑긋 서요.', '호기심과 탐구가 강물처럼 흘러들어 성장의 양분이 돼요. 배울수록 자라는 선순환형.']
   ],
   [
-    ['장작 품은 화성', '화목. 이름값 해요. 이 사람 있는 모임은 대체로 화목.', '뜨거운 기질을 배려와 공감이 장작처럼 지펴줘요. 확 꺼지지 않는 난로 같은 사람.'],
-    ['타오르는 화성', '화화, 화끈함이 두 배. 들어서면 방 온도가 2도 올라가요.', '열정으로 태어나 열정으로 살아온 태양계 공인 에너지원. 연료 게이지는 가끔 확인해요.'],
-    ['가마 속 화성', '화토, 발음은 화투지만 판은 절대 안 엎어요.', '타오르는 에너지가 공정함과 겸손으로 굳었어요. 뜨거운데 믿을 수 있는 드문 조합.'],
-    ['대장간 화성', '화금, 화요일부터 금요일까지 풀가동.', '열정이 원칙과 성실함을 연장처럼 다뤄요. ‘하고 싶다’를 ‘해냈다’로 바꾸는 실행형.'],
-    ['등대 화성', '화수, 화수분처럼 아이디어가 마르지 않아요.', '확 타오르는 기질을 탐구하는 힘이 다스려 멀리 비추는 등대가 됐어요. 겉은 차분, 속은 뜨거움.']
+    ['따끈따끈', '식지 않는 난로처럼 사람을 챙겨요.', '뜨거운 기질을 배려와 공감이 장작처럼 지펴줘요. 확 꺼지지 않는 난로 같은 사람.'],
+    ['활활', '들어서면 방 온도가 2도 올라가요.', '열정으로 태어나 열정으로 살아온 태양계 공인 에너지원. 연료 게이지는 가끔 확인해요.'],
+    ['화끈', '뜨겁지만 판은 절대 안 엎어요.', '타오르는 에너지가 공정함과 겸손으로 굳었어요. 뜨거운데 믿을 수 있는 드문 조합.'],
+    ['뚝딱뚝딱', '‘하고 싶다’를 ‘해냈다’로 바꾸는 사람.', '열정이 원칙과 성실함을 연장처럼 다뤄요. 월요일부터 금요일까지 풀가동하는 실행형.'],
+    ['번쩍번쩍', '아이디어가 번개처럼 떨어져요.', '확 타오르는 기질을 탐구하는 힘이 다스려 멀리 비추는 등대가 됐어요. 겉은 차분, 속은 뜨거움.']
   ],
   [
-    ['숲을 일군 토성', '토목. 관계를 토목공사처럼 크고 튼튼하게 지어요.', '묵직한 기질 위에 배려가 뿌리를 내렸어요. 무심해 보여도 챙길 건 다 챙겨요.'],
-    ['햇살 받은 토성', '토화, 토닥토닥 화이팅. 사람들 속에서 오히려 충전돼요.', '안정적인 기질이 사람들과의 교류에서 에너지를 받아 자라요. 든든한데 재밌는 모임의 기둥.'],
-    ['고리를 두른 토성', '토토. 복권 말고 보증수표예요.', '믿음과 중심을 타고나 정직하고 겸손하게 살아온 신뢰의 원본. 토성 고리처럼 자기 선이 분명해요.'],
-    ['광맥 품은 토성', '산에서 금 나오듯, 조용히 있다가 결과물을 쏟아내요.', '묵묵한 기질이 성실함으로 흘러나와 결과를 만들어요. 말보다 결과물이 먼저 도착하는 사람.'],
-    ['호수를 품은 토성', '토수, 흙이 물을 담듯 떠다니는 생각을 모아 쓸모 있게.', '안정된 기질이 호기심과 아이디어를 둑처럼 모아 관리해요. 생각은 넓게, 실행은 현실적으로.']
+    ['토닥토닥', '무심한 척 다 챙기는 사람.', '묵직한 기질 위에 배려가 뿌리를 내렸어요. 말수는 적어도 챙길 건 다 챙겨요.'],
+    ['영차영차', '든든하게 앞에서 끌고 가는 모임의 기둥.', '안정적인 기질이 사람들과의 교류에서 에너지를 받아 자라요. 든든한데 재밌는 사람.'],
+    ['뚜벅뚜벅', '흔들리지 않는 신뢰의 원본.', '믿음과 중심을 타고나 정직하고 겸손하게 살아왔어요. 토성 고리처럼 자기 선이 분명해요.'],
+    ['차곡차곡', '말보다 결과물이 먼저 도착해요.', '묵묵한 기질이 성실함으로 흘러나와 결과를 만들어요. 조용히 쌓다가 한 번에 보여주는 사람.'],
+    ['주섬주섬', '떠다니는 생각을 모아 쓸모 있게 만들어요.', '안정된 기질이 호기심과 아이디어를 둑처럼 모아 관리해요. 생각은 넓게, 실행은 현실적으로.']
   ],
   [
-    ['정원사 금성', '금목, 금목걸이처럼 차가워 보여도 알고 보면 반짝이는 다정함.', '단호한 기질이 배려를 가위처럼 섬세하게 다뤄요. 선 긋는 것도 챙기는 것도 정확해요.'],
-    ['담금질된 금성', '금화. 불에 달궈져야 금화가 되죠.', '원칙적인 기질이 사람들과 부딪히며 벼려졌어요. 날은 서 있는데 빛도 나는 타입.'],
-    ['원석 금성', '금토, 금토 드라마처럼 몰아봐야 진가를 알아요.', '날카로운 기질이 정직과 겸손 속에서 품어지며 자랐어요. 알수록 깊고 오래 볼수록 빛나요.'],
-    ['강철 금성', '금금, 원칙이 두 겹. 한다면 하고, 안 한다면 안 해요.', '결단과 원칙을 타고나 성실함으로 살아온 태양계 품질관리팀장. ‘대충’도 가끔은 기술이에요.'],
-    ['맑은 종 금성', '금수, 금수저 말고 금수강산.', '명확한 기질이 탐구와 통찰로 흘러나와요. 정리 잘하는 머리에 호기심까지 얹힌 분석가형.']
+    ['콕콕', '필요한 걸 콕 집어 챙겨 주는 사람.', '단호한 기질이 배려를 가위처럼 섬세하게 다뤄요. 선 긋는 것도 챙기는 것도 정확해요.'],
+    ['척척', '부딪혀도 척척, 날은 서 있는데 빛도 나요.', '원칙적인 기질이 사람들과 부딪히며 벼려졌어요. 결정이 빠르고 뒤끝이 없어요.'],
+    ['꼿꼿', '누가 봐도 꼿꼿한 원칙주의자.', '날카로운 기질이 정직과 겸손 속에서 품어지며 자랐어요. 알수록 깊고 오래 볼수록 빛나요.'],
+    ['칼각', '한다면 하고, 안 한다면 안 해요.', '결단과 원칙을 타고나 성실함으로 살아온 태양계 품질관리팀장. ‘대충’도 가끔은 기술이에요.'],
+    ['갸우뚱', '고개를 갸우뚱하다가 답을 찾아내요.', '명확한 기질이 탐구와 통찰로 흘러나와요. 정리 잘하는 머리에 호기심까지 얹힌 분석가형.']
   ],
   [
-    ['봄비 수성', '수목, 수목드라마처럼 잔잔한데 은근 중독성.', '깊고 유연한 기질이 배려로 스며 나와요. 티 안 나게 주변을 자라게 하는 봄비 같은 사람.'],
-    ['온천 수성', '수화, 물과 불. 차가운 머리로 사교력을 필요할 때만 꺼내 써요.', '생각 깊은 기질이 외향 에너지를 도구처럼 다뤄요. 조용하다가 필요할 때 무대를 장악하는 반전형.'],
-    ['잔잔한 호수 수성', '수토, 흐르던 물이 둑을 만나 호수가 됐어요.', '어디로든 흐르고 싶은 기질에 정직과 겸손이라는 둑이 생겨 깊어졌어요. 자유로운데 선은 지켜요.'],
-    ['바위틈 샘 수성', '수금, 꾸준함으로 결국 뭐든 수금해내요.', '성실함과 원칙이 샘의 바위처럼 지혜를 모아줘요. 꾸준할수록 깊어지는 사람.'],
-    ['심해 수성', '수수, 수수께끼의 그 수수. 파도 파도 끝이 없어요.', '지혜와 유연함을 타고나 호기심으로 살아온 탐험가. 머릿속 우주가 실제 우주만큼 넓어요.']
+    ['촉촉', '봄비처럼 티 안 나게 스며들어요.', '깊고 유연한 기질이 배려로 스며 나와요. 티 안 나게 주변을 자라게 하는 사람.'],
+    ['불쑥불쑥', '조용하다가 불쑥 무대를 접수해요.', '생각 깊은 기질이 외향 에너지를 도구처럼 다뤄요. 필요할 때만 꺼내 쓰는 반전형.'],
+    ['잔잔', '자유로운데 선은 꼭 지켜요.', '어디로든 흐르고 싶은 기질에 정직과 겸손이라는 둑이 생겨 깊어졌어요.'],
+    ['졸졸', '멈추지 않고 흘러 결국 바위도 뚫어요.', '성실함과 원칙이 샘의 바위처럼 지혜를 모아줘요. 꾸준할수록 깊어지는 사람.'],
+    ['퐁당퐁당', '궁금하면 일단 뛰어들고 봐요.', '지혜와 유연함을 타고나 호기심으로 살아온 탐험가. 머릿속 우주가 실제 우주만큼 넓어요.']
   ]
 ];
+var BAL_TYPE = ['두루두루', '어느 자리에 앉혀도 그 역할이 돼요.', '튀는 역할 없이 다섯 성향이 고르게 모였어요. 상황 따라 어느 자리든 맡는 만능 크루원. 단점은 ‘너 원래 어떤 사람이야?’에 답하기 어렵다는 것.'];
+function typeTitle(sen, dom, bal) { return bal ? BAL_TYPE[0] + ' 크루원' : TYPES[sen][dom][0] + ' ' + ROLE[dom].name; }
+function typeFormal(sen, dom, bal) { return EL[sen].planet + ' 출신 ' + (bal ? '만능 크루원' : ROLE[dom].name); }
 
 /* ───────── 50문항 ─────────
    리커트 30 (5요인 × 하위요인 2 × 3문항, 요인당 역채점 2)
@@ -899,7 +1090,7 @@ function levelOf(z) { return z >= 1.0 ? '높음' : z >= 0.4 ? '약간 높음' : 
 function score100(m) { return Math.round((m - 1) / 5 * 100); }
 
 /* ───────── 상태 ───────── */
-var state = { answers: new Array(ITEMS.length).fill(null), idx: 0, birth: null, last: null };
+var state = { answers: new Array(ITEMS.length).fill(null), idx: 0, birth: null, last: null, sample: false, profile: null };
 function show(id) { $$('.screen').forEach(function (s) { s.hidden = s.id !== id; }); window.scrollTo(0, 0); }
 
 /* 배경 · 장식 */
@@ -930,7 +1121,6 @@ function show(id) { $$('.screen').forEach(function (s) { s.hidden = s.id !== id;
 /* ───────── 출생 정보 ───────── */
 function todayStr() { var d = new Date(); return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()); }
 $('#f-date').max = todayStr();
-$('#home').addEventListener('click', function () { show('s-intro'); });
 $('#go-birth').addEventListener('click', function () { show('s-birth'); });
 $('#back-intro').addEventListener('click', function () { show('s-intro'); });
 $('#f-notime').addEventListener('change', function (e) { $('#f-time').disabled = e.target.checked; $('#birth-err').textContent = ''; });
@@ -948,7 +1138,7 @@ function randomAnswers() {
 $('#go-sample').addEventListener('click', function () {
   var R = function (a, b) { return a + Math.floor(Math.random() * (b - a + 1)); };
   state.birth = { name: '샘플', year: R(1970, 2005), month: R(1, 12), day: R(1, 28), hour: R(0, 23), minute: R(0, 59), timeKnown: true, longitude: 126.98, yajasi: false, noSolarCorrection: false };
-  state.answers = randomAnswers();
+  state.answers = randomAnswers(); state.sample = true;
   finish();
 });
 function validateBirth() {
@@ -975,7 +1165,7 @@ $('#go-quiz').addEventListener('click', function () {
   var v = validateBirth();
   if (v.err) { $('#birth-err').textContent = v.err; return; }
   $('#birth-err').textContent = '';
-  state.birth = v.birth; state.idx = 0; state.answers = new Array(ITEMS.length).fill(null);
+  state.birth = v.birth; state.idx = 0; state.answers = new Array(ITEMS.length).fill(null); state.sample = false;
   renderQ(); show('s-quiz');
 });
 
@@ -1035,16 +1225,16 @@ $('#fc-b').addEventListener('click', function () { answer(4); });
 function goBack() { if (answering || state.idx === 0) return; state.idx--; renderQ(); }
 $('#q-back').addEventListener('click', goBack);
 document.addEventListener('keydown', function (e) {
-  if ($('#s-quiz').hidden || e.altKey || e.ctrlKey || e.metaKey) return;
+  if ($('#s-quiz').hidden || $('#modal') || e.altKey || e.ctrlKey || e.metaKey) return;
   if (e.key >= '1' && e.key <= '6') { e.preventDefault(); answer(+e.key); }
   else if (e.key === 'Backspace' || e.key === 'ArrowLeft') { e.preventDefault(); goBack(); }
 });
 
 /* ───────── 채점 ─────────
    1) 리커트 → 요인별 응답 점수(0~100)와 잠정 수준(높음~낮음)
-   2) 궤도 지수 T = 0.5 × (개인 안에서 가운데를 뺀 리커트 z) + 0.5 × (양자택일 표준점수)
+   2) 역할 지수 T = 0.5 × (개인 안에서 가운데를 뺀 리커트 z) + 0.5 × (양자택일 표준점수)
       → 모두에게 ‘그렇다’만 해도 1위가 정해지지 않고, 좋아 보이는 성향 쪽 쏠림이 줄어요
-   3) 1위 궤도 = T 최댓값 (동점: 양자택일 → 사주 기운 → 하위요인 → 오행 순서) */
+   3) 크루 역할 = T 최댓값 (동점: 양자택일 → 사주 기운 → 하위요인 → 오행 순서) */
 function score(answers, birth) {
   var raw = [[], [], [], [], []], fac = [[[], []], [[], []], [[], []], [[], []], [[], []]], bas = [], bis = [];
   var attFail = 0, sd = [], counts = {}, unrev = [], fcPts = [0, 0, 0, 0, 0], fcAns = [];
@@ -1073,7 +1263,7 @@ function score(answers, birth) {
   });
   var dom = sorted[0].f, second = sorted[1].f, gap12 = sorted[0].T - sorted[1].T, range = sorted[0].T - sorted[4].T;
   var sRange = Math.max.apply(null, factors.map(function (x) { return x.score; })) - Math.min.apply(null, factors.map(function (x) { return x.score; }));
-  var ua = (CUT.balanced - range) / CUT.balBorder, ub = (CUT.balScore - sRange) / 3;   // 오성취 = 궤도 지수 폭과 점수 폭이 둘 다 좁을 때
+  var ua = (CUT.balanced - range) / CUT.balBorder, ub = (CUT.balScore - sRange) / 3;   // 만능 크루원 = 역할 지수 폭과 점수 폭이 둘 다 좁을 때
   var exactTie = gap12 < 1e-9, balanced = ua > 0 && ub >= 0;
   var balBorder = balanced ? Math.min(ua, ub) < 1 : (ua > -1 && ub >= -1);
   var sen = saju.dayElement, relKey = Saju.relation(sen, dom);
@@ -1082,7 +1272,7 @@ function score(answers, birth) {
   var basM = mean(bas), bisM = mean(bis), basZ = (basM - NORM.bas[0]) / NORM.bas[1], bisZ = (bisM - NORM.bis[0]) / NORM.bis[1];
   var yyDiff = basZ - bisZ, yy = Math.abs(yyDiff) < CUT.yy ? 'bal' : (yyDiff > 0 ? 'yang' : 'yin');
 
-  // 싱크로율: 사주 오행 분포와 궤도 지수 모양의 상관 (50 ± 40)
+  // 싱크로율: 사주 오행 분포와 역할 지수 모양의 상관 (50 ± 40)
   var p = saju.elements, q = factors.map(function (x) { return x.T; }), mp = mean(p), mq = mean(q), num = 0, dp = 0, dq = 0;
   for (var i = 0; i < 5; i++) { num += (p[i] - mp) * (q[i] - mq); dp += (p[i] - mp) * (p[i] - mp); dq += (q[i] - mq) * (q[i] - mq); }
   var r = (dp > 0 && dq > 0) ? num / Math.sqrt(dp * dq) : 0;
@@ -1098,13 +1288,13 @@ function score(answers, birth) {
 
   var flags = saju.flags.slice();
   if (!balanced && gap12 < CUT.nearTie) {
-    flags.push({ kind: 'nearTie', title: '궤도 경계',
-      msg: '1위 ' + EL[dom].planet + '(' + EL[dom].trait + ') 궤도와 2위 ' + EL[second].planet + '(' + EL[second].trait + ') 궤도가 ' + (exactTie ? '완전히 같아서, 양자택일에서 더 많이 고른 쪽으로 정했어요.' : '거의 붙어 있어요. 두 궤도 사이에 걸친 사람이에요.'),
-      alt: '이웃 유형 ' + TYPES[sen][second][0] });
+    flags.push({ kind: 'nearTie', title: '역할 경계',
+      msg: '1위 ' + jo(ROLE[dom].name, '과', '와') + ' 2위 ' + jo(ROLE[second].name, '이', '가') + ' ' + (exactTie ? '완전히 같아서, 양자택일에서 더 많이 고른 쪽으로 정했어요.' : '거의 붙어 있어요. 두 역할 사이에 걸친 사람이에요.'),
+      alt: '이웃 유형 ' + typeTitle(sen, second) });
   }
   if (balBorder) {
-    flags.push({ kind: 'balBorder', title: '균형 경계', msg: '다섯 성향의 점수 폭이 ' + sRange + '점이라 오성취(균형형) 기준선 근처예요.',
-      alt: balanced ? '기울어진 해석 ' + TYPES[sen][dom][0] : '균형 해석 오성취 ' + EL[sen].planet });
+    flags.push({ kind: 'balBorder', title: '균형 경계', msg: '다섯 성향의 점수 폭이 ' + sRange + '점이라 만능 크루원(균형형) 기준선 근처예요.',
+      alt: balanced ? '기울어진 해석 ' + typeTitle(sen, dom) : '균형 해석 ' + typeTitle(sen, dom, true) });
   }
   return { sRange: sRange, factors: factors, sorted: sorted.map(function (x) { return x.f; }), dom: dom, second: second, low: sorted[4].f, gap12: gap12, range: range, exactTie: exactTie, starD: starD,
     balanced: balanced, relKey: relKey, sen: sen, saju: saju, bas: { mean: basM, z: basZ }, bis: { mean: bisM, z: bisZ },
@@ -1113,7 +1303,7 @@ function score(answers, birth) {
 
 function finish() {
   show('s-loading');
-  var msgs = ['궤도 계산 중…', '사주 원국 펼치는 중…', '행성들 줄 세우는 중…'], k = 0;
+  var msgs = ['크루 배치 중…', '사주 원국 펼치는 중…', '행성들 줄 세우는 중…'], k = 0;
   $('#loading-msg').textContent = msgs[0];
   var iv = setInterval(function () { k = (k + 1) % msgs.length; $('#loading-msg').textContent = msgs[k]; }, 520);
   setTimeout(function () {
@@ -1121,6 +1311,7 @@ function finish() {
     try {
       var res = score(state.answers, state.birth);
       state.last = res;
+      if (!state.sample && !res.validity.gate) { saveProfileFromRes(res); res.saved = true; }
       if (res.validity.gate) renderGate(res); else renderResult(res);
       show('s-result');
     } catch (err) {
@@ -1136,7 +1327,7 @@ function renderGate(res) {
   if (v.straight) why.push('대부분의 문항에 같은 번호를 골랐어요');
   if (v.attFail >= 2) why.push('집중 확인 문항 두 개를 모두 놓쳤어요');
   $('#s-result').innerHTML = '<div class="card" style="text-align:center;padding:30px 20px">' + mascot(4, 96, 'o', 'float') +
-    '<h2 class="disp" style="font-size:26px;margin-top:8px">궤도를 제대로 못 읽었어요</h2><p class="para" style="color:var(--ink-2)">' + why.join('. ') + '. 이대로면 결과가 당신이 아니라 응답 패턴을 보여줘요.</p>' +
+    '<h2 class="disp" style="font-size:26px;margin-top:8px">역할을 제대로 못 읽었어요</h2><p class="para" style="color:var(--ink-2)">' + why.join('. ') + '. 이대로면 결과가 당신이 아니라 응답 패턴을 보여줘요.</p>' +
     '<div class="actions"><button class="btn pri" id="gate-retry">천천히 다시 하기</button><button class="btn soft" id="gate-show">그래도 결과 보기</button></div></div>';
   $('#gate-retry').addEventListener('click', function () { state.answers = new Array(ITEMS.length).fill(null); state.idx = 0; renderQ(); show('s-quiz'); });
   $('#gate-show').addEventListener('click', function () { renderResult(res); window.scrollTo(0, 0); });
@@ -1167,8 +1358,9 @@ var LUCKY_COLOR = [['초록', '#3CC08A'], ['빨강', '#FF6B5A'], ['노랑', '#FF
 var LUCKY_NUM = [[3, 8], [2, 7], [5, 10], [4, 9], [1, 6]];
 var LUCKY_DIR = ['동쪽', '남쪽', '한가운데', '서쪽', '북쪽'];
 var RV = { bi: 0.35, sik: 1, 'in': 1, jae: -1, gwan: -1 };
-var SHENG = ['나무가 불을 지피듯', '불이 재가 되어 흙을 기름지게 하듯', '흙 속에서 금이 자라듯', '쇠에 맑은 물이 맺히듯', '물이 나무를 키우듯'];
-var KE = ['나무뿌리가 흙을 파고들듯', '불이 쇠를 녹이듯', '흙이 물길을 막듯', '도끼가 나무를 베듯', '물이 불을 끄듯'];
+/* 상생·상극을 크루 이야기로. SHENG[e]: e가 다음 역할(e+1)을 밀어줌 · KE[e]: e가 e+2 역할을 누르기 쉬움 */
+var SHENG = ['정원사가 키운 사람들로 선장이 판을 벌여요', '선장이 벌인 판을 관제사가 안정시켜요', '관제사가 세운 규칙 위에서 항해사가 항로를 짜요', '항해사가 짠 항로 덕에 탐험가가 멀리 나가요', '탐험가가 찾아온 씨앗을 정원사가 키워요'];
+var KE = ['정원사의 ‘그냥 봐주자’가 관제사의 ‘규칙은 규칙’과 부딪혀요', '선장의 즉흥 추진이 항해사의 계획을 흔들어요', '관제사의 규칙이 탐험가를 답답하게 해요', '항해사의 효율이 정원사의 배려를 자르기 쉬워요', '탐험가의 딴생각이 선장의 추진력을 식혀요'];
 var TIERS = [[85, '환상의 궤도', '서로의 궤도를 밀어주는 사이. 같이 있으면 둘 다 빛나요.', '#8EE0B8'],
   [70, '순항 궤도', '큰 충돌 없이 잘 굴러가는 사이. 가끔 서로의 속도만 맞춰 주세요.', '#A9BFFF'],
   [55, '평행 궤도', '나란히 가지만 교차점은 적은 사이. 공통 관심사 하나가 다리가 돼요.', '#FFD27E'],
@@ -1211,24 +1403,25 @@ function weatherOf(res, now) {
   now = now || new Date();
   var y = now.getFullYear(), m = now.getMonth() + 1, d = now.getDate();
   var idx = ((Saju.jdn(y, m, d) + 49) % 60 + 60) % 60, ts = idx % 10, tb = idx % 12;
-  var god = Saju.tenGod(res.saju.dayStem, ts), w = WEATHER[god];
+  var approx = res.saju.dayStem == null, myStem = approx ? res.saju.dayElement * 2 : res.saju.dayStem; // 일간을 모르면 행성의 양간으로 어림
+  var god = Saju.tenGod(myStem, ts), w = WEATHER[god];
   var le = (res.saju.dayElement + 4) % 5;
   return { date: y + '년 ' + m + '월 ' + d + '일', iljin: Saju.STEMS[ts] + Saju.BRANCHES[tb], iljinKo: Saju.STEMS_KO[ts] + Saju.BRANCHES_KO[tb],
-    god: god, sky: w[0], text: w[1], color: LUCKY_COLOR[le], num: LUCKY_NUM[le][idx % 2], dir: LUCKY_DIR[le], le: le };
+    god: god, sky: w[0], text: w[1], color: LUCKY_COLOR[le], num: LUCKY_NUM[le][idx % 2], dir: LUCKY_DIR[le], le: le, stem: myStem, approx: approx };
 }
 function compatOf(me, fr) {
   var ro = Saju.relation(me.dom, fr.dom), rb = Saju.relation(me.sen, fr.sen), rx1 = Saju.relation(me.sen, fr.dom), rx2 = Saju.relation(fr.sen, me.dom);
   var v = 0.5 * RV[ro] + 0.3 * RV[rb] + 0.1 * RV[rx1] + 0.1 * RV[rx2];
   var sc = Math.max(20, Math.min(96, Math.round(58 + 36 * v)));
   var tier = TIERS.filter(function (t) { return sc >= t[0]; })[0];
-  var tm = EL[me.dom].trait, tf = EL[fr.dom].trait, orbit;
-  if (ro === 'bi') orbit = '같은 ' + EL[me.dom].planet + ' 궤도끼리예요. 말 안 해도 통하지만, 둘 다 같은 데서 막혀요.';
-  else if (ro === 'sik') orbit = SHENG[me.dom] + ', 당신의 ' + tm + '이 친구의 ' + tf + '을 키워줘요.';
-  else if (ro === 'in') orbit = SHENG[fr.dom] + ', 친구의 ' + tf + '이 당신의 ' + tm + '을 살려줘요.';
-  else if (ro === 'jae') orbit = KE[me.dom] + ', 당신의 ' + tm + '이 친구의 ' + tf + '을 누르기 쉬워요. 속도를 맞춰 주세요.';
-  else orbit = KE[fr.dom] + ', 친구의 ' + tf + '이 당신의 ' + tm + '을 누르기 쉬워요. 불편한 건 그때그때 말해 주세요.';
-  var birth = rb === 'bi' ? '태생 행성이 같아서 기본 결이 비슷해요.' : (rb === 'sik' || rb === 'in') ? '태생 행성끼리 상생이라 처음부터 편한 사이예요.' : '태생 행성끼리 상극이라 처음엔 낯설 수 있어요.';
-  return { score: sc, tier: tier[1], tierText: tier[2], color: tier[3], orbit: orbit, birth: birth, kind: (ro === 'sik' || ro === 'in') ? '상생' : ro === 'bi' ? '비화' : '상극', ro: ro, rb: rb };
+  var rm = ROLE[me.dom].name, rf = ROLE[fr.dom].name, orbit;
+  if (ro === 'bi') orbit = rm + '끼리예요. 말 안 해도 통하지만, 둘 다 같은 데서 막혀요.';
+  else if (ro === 'sik') orbit = SHENG[me.dom] + '. ' + rm + '인 당신이 친구를 밀어줘요.';
+  else if (ro === 'in') orbit = SHENG[fr.dom] + '. ' + rf + '인 친구가 당신을 밀어줘요.';
+  else if (ro === 'jae') orbit = KE[me.dom] + '. 당신이 속도를 조금 맞춰 주세요.';
+  else orbit = KE[fr.dom] + '. 불편한 건 그때그때 말해 주세요.';
+  var birth = rb === 'bi' ? '출신 행성이 같아서 기본 결이 비슷해요.' : (rb === 'sik' || rb === 'in') ? '출신 행성끼리 상생이라 처음부터 편한 사이예요.' : '출신 행성끼리 상극이라 처음엔 낯설 수 있어요.';
+  return { score: sc, tier: tier[1], tierText: tier[2], color: tier[3], orbit: orbit, birth: birth, kind: (ro === 'sik' || ro === 'in') ? '상생' : ro === 'bi' ? '같은 역할' : '상극', ro: ro, rb: rb };
 }
 function rankAll(me) {
   var all = [];
@@ -1247,18 +1440,19 @@ function weatherIcon(kind) {
   if (kind === '달빛') { s += '<path d="M40,10 A22,22 0 1 0 54,42 A17,17 0 1 1 40,10 Z" fill="#FFE7A8"/>' + star4(16, 18, 4, '#C8CEF7') + star4(50, 52, 3, '#C8CEF7'); }
   return s + '</svg>';
 }
+var UID = 0;
 function orbitSVG(res) {
-  var orbs = res.balanced ? [0, 1, 2, 3, 4] : [res.dom];
+  var orbs = res.balanced ? [0, 1, 2, 3, 4] : [res.dom], gid = 'halo' + (++UID);
   var path = 'M30,118 a130,40 0 1,0 260,0 a130,40 0 1,0 -260,0';
-  var s = '<svg class="orbit" viewBox="0 0 320 236" role="img" aria-label="' + EL[res.sen].planet + ' 주위를 도는 ' + (res.balanced ? '다섯 행성' : EL[res.dom].planet) + '">';
-  s += '<defs><radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="' + BODY[res.sen] + '" stop-opacity=".35"/><stop offset="1" stop-color="' + BODY[res.sen] + '" stop-opacity="0"/></radialGradient></defs>';
-  s += '<circle cx="160" cy="114" r="100" fill="url(#halo)"/>';
+  var s = '<svg class="orbit" viewBox="0 0 320 236" role="img" aria-label="' + EL[res.sen].planet + ' 주위를 도는 ' + (res.balanced ? '다섯 역할' : ROLE[res.dom].name) + ' 배지">';
+  s += '<defs><radialGradient id="' + gid + '" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="' + BODY[res.sen] + '" stop-opacity=".35"/><stop offset="1" stop-color="' + BODY[res.sen] + '" stop-opacity="0"/></radialGradient></defs>';
+  s += '<circle cx="160" cy="114" r="100" fill="url(#' + gid + ')"/>';
   s += '<g transform="rotate(-9 160 118)"><ellipse cx="160" cy="118" rx="130" ry="40" fill="none" stroke="#3A3A5C" stroke-width="2" stroke-dasharray="3 7"/></g>';
   s += star4(40, 40, 7, '#FFD9A8') + star4(282, 58, 5, '#C8CEF7') + star4(268, 200, 6, '#FFD9A8') + star4(56, 190, 4, '#C8CEF7');
   s += '<g class="float">' + mascotAt(res.sen, 160, 114, 150, 'smile') + '</g>';
   s += '<g transform="rotate(-9 160 118)">';
   orbs.forEach(function (e, i) {
-    var body = mascotAt(e, 0, 0, orbs.length > 1 ? 38 : 58, 'smile');
+    var body = '<g transform="rotate(9)">' + roleBadgeInner(e, orbs.length > 1 ? 14 : 21) + '</g>';
     if (REDUCED) { var a = (i / orbs.length) * Math.PI * 2 + 0.5; s += '<g transform="translate(' + (160 + 130 * Math.cos(a)).toFixed(1) + ',' + (118 + 40 * Math.sin(a)).toFixed(1) + ')">' + body + '</g>'; }
     else s += '<g>' + body + '<animateMotion dur="' + (orbs.length > 1 ? 12 : 9) + 's" begin="' + (-i * 2.4) + 's" repeatCount="indefinite" path="' + path + '"/></g>';
   });
@@ -1278,7 +1472,7 @@ function radarSVG(res) {
   s += '<polygon points="' + P(sV.map(function (v, i) { return pt(i, Math.max(v, .05)); })) + '" fill="var(--s-saju)" fill-opacity=".12" stroke="var(--s-saju)" stroke-width="2" stroke-dasharray="6 5" stroke-linejoin="round"/>';
   s += '<polygon points="' + P(qV.map(function (v, i) { return pt(i, Math.max(v, .05)); })) + '" fill="var(--s-psy)" fill-opacity=".18" stroke="var(--s-psy)" stroke-width="2" stroke-linejoin="round"/>';
   for (var i = 0; i < 5; i++) {
-    var a = pt(i, Math.max(sV[i], .05)), b = pt(i, Math.max(qV[i], .05)), tip = EL[i].h + ' ' + EL[i].trait + ' · 사주 ' + el[i] + '개 · 점수 ' + ps[i] + ' · 궤도 지수 ' + (Ts[i] >= 0 ? '+' : '') + Ts[i].toFixed(2);
+    var a = pt(i, Math.max(sV[i], .05)), b = pt(i, Math.max(qV[i], .05)), tip = EL[i].h + ' ' + EL[i].trait + ' · 사주 ' + el[i] + '개 · 점수 ' + ps[i] + ' · 역할 지수 ' + (Ts[i] >= 0 ? '+' : '') + Ts[i].toFixed(2);
     s += '<circle cx="' + a[0].toFixed(1) + '" cy="' + a[1].toFixed(1) + '" r="4.5" fill="var(--s-saju)" stroke="#101017" stroke-width="2"/>';
     s += '<circle cx="' + b[0].toFixed(1) + '" cy="' + b[1].toFixed(1) + '" r="4.5" fill="var(--s-psy)" stroke="#101017" stroke-width="2"/>';
     var lp = pt(i, 1.24);
@@ -1332,6 +1526,21 @@ function wrapText(ctx, text, maxW) {
   return lines;
 }
 function rrect(ctx, x, y, w, h, r) { ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); }
+/* 역할 배지 그리기 · 글꼴 맞춤 */
+function drawRoleBadge(ctx, d, x, y, r) {
+  ctx.save(); ctx.translate(x, y);
+  ctx.beginPath(); ctx.arc(0, 0, r, 0, Math.PI * 2); ctx.fillStyle = BODY[d]; ctx.fill();
+  ctx.globalAlpha = .5; ctx.strokeStyle = DEEP[d]; ctx.lineWidth = r / 10; ctx.stroke(); ctx.globalAlpha = 1;
+  var k = r / 14 * 0.95; ctx.scale(k, k);
+  ctx.strokeStyle = '#2A2D4F'; ctx.lineWidth = 2; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  ROLE_ICON[d].forEach(function (p) { ctx.stroke(new Path2D(p)); });
+  ctx.restore();
+}
+function fitFont(ctx, text, family, size, maxW, min) {
+  ctx.font = size + 'px ' + family;
+  while (size > min && ctx.measureText(text).width > maxW) { size -= 2; ctx.font = size + 'px ' + family; }
+  return size;
+}
 function makeCard(res, info) {
   var fontsReady = (document.fonts && document.fonts.load) ? Promise.race([
     Promise.all(['104px Jua', '36px "Gowun Dodum"', '900 56px "Noto Serif KR"'].map(function (f) { return document.fonts.load(f).catch(function () {}); })),
@@ -1345,220 +1554,260 @@ function makeCard(res, info) {
     var seed = res.sen * 97 + res.dom * 13 + 7; function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
     for (var i = 0; i < 170; i++) { var sx0 = rnd() * W, sy0 = rnd() * H, low = sy0 > 690; ctx.globalAlpha = low ? 0.12 + rnd() * 0.18 : 0.25 + rnd() * 0.7; ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(sx0, sy0, rnd() < 0.1 && !low ? 2.6 : 1.2, 0, Math.PI * 2); ctx.fill(); }
     ctx.globalAlpha = 1; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    // 머리
     ctx.fillStyle = '#B4B6CE'; ctx.font = '34px ' + BODYF; ctx.fillText('진우주 운명 성격검사', 540, 92);
-    ctx.font = '36px ' + DISP; var tag = info.tag, tw = ctx.measureText(tag).width + 60;
-    rrect(ctx, 540 - tw / 2, 124, tw, 62, 31); ctx.fillStyle = '#1E1D3A'; ctx.fill(); ctx.fillStyle = '#B3AFFF'; ctx.fillText(tag, 540, 167);
+    ctx.font = '36px ' + DISP; var tw = ctx.measureText(info.tag).width + 60;
+    rrect(ctx, 540 - tw / 2, 124, tw, 62, 31); ctx.fillStyle = '#1E1D3A'; ctx.fill(); ctx.fillStyle = '#B3AFFF'; ctx.fillText(info.tag, 540, 167);
+    // 궤도 + 출신 행성 + 역할 배지
     ctx.save(); ctx.translate(540, 450); ctx.rotate(-9 * Math.PI / 180); ctx.setLineDash([10, 20]); ctx.strokeStyle = '#3A3A5C'; ctx.lineWidth = 4; ctx.beginPath(); ctx.ellipse(0, 0, 420, 125, 0, 0, Math.PI * 2); ctx.stroke(); ctx.restore(); ctx.setLineDash([]);
     var halo = ctx.createRadialGradient(540, 440, 10, 540, 440, 300); halo.addColorStop(0, BODY[res.sen] + '66'); halo.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = halo; ctx.fillRect(200, 100, 680, 700);
     drawMascot(ctx, res.sen, 540, 440, 430);
-    if (res.balanced) { [0, 1, 2, 3, 4].forEach(function (e, i) { var a = -2.4 + i * 1.25; drawMascot(ctx, e, 540 + 420 * Math.cos(a) * 0.99, 450 + 125 * Math.sin(a) - Math.cos(a) * 60, 120); }); }
-    else drawMascot(ctx, res.dom, 905, 360, 170);
-    // 코드
-    ctx.font = '900 58px ' + HJ;
-    var c1 = EL[res.sen].h, c2 = res.balanced ? '五' : EL[res.dom].h, arrow = '  →  ';
-    ctx.font = '900 58px ' + HJ; var w1 = ctx.measureText(c1).width, w3 = ctx.measureText(c2).width; ctx.font = '40px ' + BODYF; var w2 = ctx.measureText(arrow).width;
-    var sx = 540 - (w1 + w2 + w3) / 2; ctx.textAlign = 'left';
-    ctx.font = '900 58px ' + HJ; ctx.fillStyle = DEEP[res.sen]; ctx.fillText(c1, sx, 750);
-    ctx.font = '40px ' + BODYF; ctx.fillStyle = '#7E81A0'; ctx.fillText(arrow, sx + w1, 742);
-    ctx.font = '900 58px ' + HJ; ctx.fillStyle = res.balanced ? '#B3AFFF' : DEEP[res.dom]; ctx.fillText(c2, sx + w1 + w2, 750);
-    ctx.textAlign = 'center'; ctx.fillStyle = '#F1F1F8'; ctx.font = '108px ' + DISP; ctx.fillText(info.name, 540, 868);
-    ctx.fillStyle = '#B4B6CE'; ctx.font = '36px ' + BODYF; ctx.fillText(info.sub, 540, 950);
-    // 말풍선
-    ctx.font = '36px ' + BODYF; var lines = wrapText(ctx, info.pun, 820).slice(0, 3), bh = 50 + lines.length * 52;
-    rrect(ctx, 110, 998, 860, bh, 32); ctx.fillStyle = '#221A0E'; ctx.fill(); ctx.strokeStyle = '#4E3B1C'; ctx.lineWidth = 3; ctx.stroke();
-    ctx.fillStyle = '#FFD9A0'; lines.forEach(function (l, i) { ctx.fillText(l, 540, 1048 + i * 52 + 4); });
-    // 하단 스탯
-    var sy = 1023 + bh + 26, stats = [['별 등급', info.star], ['싱크로율', info.sync], ['세부유형', info.sub2]];
-    stats.forEach(function (st, i) {
+    if (res.balanced) { [140, 200, 330, 20, 55].forEach(function (deg, e) { var th = deg * Math.PI / 180, c9 = Math.cos(-9 * Math.PI / 180), s9 = Math.sin(-9 * Math.PI / 180);
+      drawRoleBadge(ctx, e, 540 + 420 * Math.cos(th) * c9 - 125 * Math.sin(th) * s9, 450 + 420 * Math.cos(th) * s9 + 125 * Math.sin(th) * c9, 46); }); }
+    else drawRoleBadge(ctx, res.dom, 905, 360, 78);
+    // 출신 · 역할
+    var fh = EL[res.sen].h, ft = '  ' + info.formal;
+    ctx.font = '900 50px ' + HJ; var w1 = ctx.measureText(fh).width; ctx.font = '38px ' + BODYF; var w2 = ctx.measureText(ft).width;
+    var sx = 540 - (w1 + w2) / 2; ctx.textAlign = 'left';
+    ctx.font = '900 50px ' + HJ; ctx.fillStyle = DEEP[res.sen]; ctx.fillText(fh, sx, 752);
+    ctx.font = '38px ' + BODYF; ctx.fillStyle = '#B4B6CE'; ctx.fillText(ft, sx + w1, 748);
+    ctx.textAlign = 'center';
+    // 이름 · 한 줄 설명
+    fitFont(ctx, info.name, DISP, 112, 960, 60); ctx.fillStyle = '#F1F1F8'; ctx.fillText(info.name, 540, 866);
+    fitFont(ctx, info.sub, BODYF, 36, 960, 26); ctx.fillStyle = '#B4B6CE'; ctx.fillText(info.sub, 540, 932);
+    // 말풍선: 최대 2줄, 넘치면 글자를 줄여요 (972~1150 구간 안에서 가운데)
+    var bs = 38, lines = null;
+    for (; bs >= 28; bs -= 2) { ctx.font = bs + 'px ' + BODYF; lines = wrapText(ctx, info.pun, 800); if (lines.length <= 2) break; }
+    if (bs < 28) { bs = 28; ctx.font = bs + 'px ' + BODYF; }
+    if (lines.length > 2) { lines = lines.slice(0, 2); lines[1] = lines[1].replace(/.$/, '…'); }
+    var lh = Math.round(bs * 1.42), bh = 44 + lines.length * lh, by = 972 + Math.round((178 - bh) / 2);
+    rrect(ctx, 110, by, 860, bh, 32); ctx.fillStyle = '#221A0E'; ctx.fill(); ctx.strokeStyle = '#4E3B1C'; ctx.lineWidth = 3; ctx.stroke();
+    ctx.fillStyle = '#FFD9A0'; lines.forEach(function (l, i) { ctx.fillText(l, 540, by + 22 + lh * (i + 0.5) + bs * 0.35); });
+    // 하단 스탯 (위치 고정)
+    var sy = 1172;
+    info.stats.forEach(function (st, i) {
       var x = 110 + i * 293; rrect(ctx, x, sy, 274, 118, 26); ctx.fillStyle = '#181824'; ctx.fill();
       ctx.fillStyle = '#7E81A0'; ctx.font = '28px ' + BODYF; ctx.fillText(st[0], x + 137, sy + 44);
-      ctx.fillStyle = '#F1F1F8'; ctx.font = (st[1].length > 8 ? '32px ' : '44px ') + DISP; ctx.fillText(st[1], x + 137, sy + 94);
+      ctx.fillStyle = '#F1F1F8'; fitFont(ctx, st[1], DISP, 44, 244, 24); ctx.fillText(st[1], x + 137, sy + 94);
     });
-    ctx.fillStyle = '#7E81A0'; ctx.font = '26px ' + BODYF; ctx.fillText('나는 어느 별에서 태어나 어느 궤도를 돌고 있을까?', 540, 1318);
+    ctx.fillStyle = '#7E81A0'; ctx.font = '26px ' + BODYF; ctx.fillText('나는 어느 별 출신, 어떤 크루일까?', 540, 1326);
     return cv.toDataURL('image/png');
   });
 }
 
 /* ───────── 결과지 ───────── */
+function formalHtml(sen, dom, bal) {
+  return mascot(sen, 24) + '<span>' + EL[sen].planet + ' 출신</span><span class="dot">·</span>' + (bal ? '<span>만능 크루원</span>' : roleBadge(dom, 22) + '<span>' + ROLE[dom].name + '</span>');
+}
+/* 저장된 유형(또는 바로 보기)만으로 만드는 간편 결과 */
+function liteRes(p) {
+  return { lite: true, sen: p.sen, dom: p.dom, balanced: !!p.balanced, relKey: Saju.relation(p.sen, p.dom), yy: p.yy || null,
+    saju: { dayStem: p.stem != null ? p.stem : null, dayElement: p.sen }, birth: { name: p.name || '' }, sync: p.sync, starLabel: p.star || null, full: !!p.full };
+}
+function weatherCard(W) {
+  return '<div class="card weather">' + weatherIcon(W.sky) + '<div><div class="date">' + W.date + ' · 오늘의 일진 ' + W.iljin + '(' + W.iljinKo + ')일</div>' +
+    '<h3>오늘의 우주 날씨 · ' + W.sky + '</h3><p>' + W.text + '</p>' +
+    '<div class="lucky"><span><i style="background:' + W.color[1] + '"></i>행운의 색 ' + W.color[0] + '</span><span>행운의 숫자 ' + W.num + '</span><span>행운의 방향 ' + W.dir + '</span></div></div>' +
+    '<p class="fine">' + (W.approx ? '출신 행성과 오늘 일진의 관계(' + W.god + ')로 매일 바뀌어요. 생일을 넣으면 일간 기준으로 더 세밀해져요.' : '당신의 일간(' + Saju.STEMS[W.stem] + ')과 오늘 일진의 관계(' + W.god + ')로 매일 바뀌어요.') + ' 재미로 봐 주세요.</p></div>';
+}
 function renderResult(res) {
-  var b = res.birth, S = res.saju, sen = res.sen, dom = res.dom, P = S.pillars, G = S.gods;
-  var who = b.name ? esc(b.name) + '님의 운명 행성' : '나의 운명 행성';
-  var t, codeHtml, codeRead, relLine;
-  if (res.balanced) {
-    t = ['오성취 ' + EL[sen].planet, '다섯 행성이 한 줄로 모이는 오성취(五星聚). 옛 천문학이 길조로 기록한 드문 장면이에요.', '튀는 궤도 없이 다섯 성향이 고르게 모였어요. 상황 따라 어느 행성으로든 변신하는 만능형. 단점은 ‘너 원래 어떤 사람이야?’에 답하기 어렵다는 것.'];
-    codeHtml = '<span class="hanja" style="color:' + DEEP[sen] + '">' + EL[sen].h + '</span><span class="ar">→</span><span class="hanja" style="color:var(--pri)">五</span>';
-    codeRead = EL[sen].ko + '·오성'; relLine = '<b>균형 궤도</b> — 다섯 궤도가 고르게 겹쳐, 명리에서 이상적으로 보는 중화(中和)에 가까워요. 그중 살짝 기운 쪽은 ' + EL[dom].trait + '이에요.';
-  } else {
-    t = TYPES[sen][dom];
-    codeHtml = '<span class="hanja" style="color:' + DEEP[sen] + '">' + EL[sen].h + '</span><span class="ar">→</span><span class="hanja" style="color:' + DEEP[dom] + '">' + EL[dom].h + '</span>';
-    codeRead = EL[sen].ko + EL[dom].ko; relLine = '<b>' + REL[res.relKey].name + '</b> <span class="muted">(' + REL[res.relKey].hz + ' · ' + REL[res.relKey].god + ')</span> — ' + REL[res.relKey].text;
-  }
-  var yyName = res.yy === 'yang' ? '양(陽) 가속 엔진' : res.yy === 'yin' ? '음(陰) 관측 망원경' : '음양 균형 엔진';
-  var yyText = res.yy === 'yang' ? '기회가 보이면 먼저 움직여요. 일단 해보고 궤도를 수정하는 타입. 브레이크 점검은 가끔.'
-    : res.yy === 'yin' ? '움직이기 전에 위험부터 살펴요. 실수가 적고 신중해요. 관측만 하다 발사 창이 닫히지 않게만.'
+  var lite = !!res.lite, b = res.birth, S = res.saju, sen = res.sen, dom = res.dom, bal = res.balanced;
+  var who = b.name ? esc(b.name) + '님의 운명 크루' : '나의 운명 크루';
+  var t = bal ? BAL_TYPE : TYPES[sen][dom], title = typeTitle(sen, dom, bal), formal = typeFormal(sen, dom, bal);
+  var relLine = bal
+    ? '<b>만능 크루원</b> — 다섯 역할이 고르게 겹쳐, 명리에서 이상적으로 보는 중화(中和)에 가까워요. 그중 살짝 기운 역할은 ' + jo(ROLE[dom].name, '이에요', '예요') + '.'
+    : '<b>' + REL[res.relKey].name + '</b> <span class="muted">(' + REL[res.relKey].hz + ' · 출신 ' + EL[sen].h + ' → 역할 ' + EL[dom].h + ')</span> — ' + REL[res.relKey].text;
+  var yy = res.yy;
+  var yyName = yy === 'yang' ? '양(陽) 가속 엔진' : yy === 'yin' ? '음(陰) 관측 망원경' : '음양 균형 엔진';
+  var yyText = yy === 'yang' ? '기회가 보이면 먼저 움직여요. 일단 해보고 항로를 수정하는 타입. 브레이크 점검은 가끔.'
+    : yy === 'yin' ? '움직이기 전에 위험부터 살펴요. 실수가 적고 신중해요. 관측만 하다 발사 창이 닫히지 않게만.'
     : '가속과 관측을 상황에 따라 바꿔요. 밀어붙일 때와 기다릴 때를 아는 편이에요.';
-  var subCode = Saju.STEMS[S.dayStem] + EL[sen].h + ' · ' + (res.balanced ? '오성' : REL[res.relKey].name.replace('형', '')) + ' · ' + (res.yy === 'yang' ? '양' : res.yy === 'yin' ? '음' : '균형');
-  var syncTier = res.sync >= 70 ? ['사주 대본대로 사는 중', '타고난 오행 모양과 지금의 성격 모양이 꽤 닮았어요.']
-    : res.sync >= 45 ? ['대본 반, 애드리브 반', '타고난 결을 바탕으로, 살면서 꽤 많은 부분을 고쳐 썼어요.']
-    : ['대본을 고쳐 쓴 사람', '타고난 오행과 지금의 성격 모양이 많이 달라요. 스스로 새 궤도를 만든 사람.'];
-  var hu = HU[dom], star = clarityOf(res), W = weatherOf(res);
-  var f2 = res.factors[res.second], fl = res.factors[res.low];
-  var secondLine = '두 번째 궤도는 ' + EL[res.second].planet + '(' + EL[res.second].trait + ' ' + f2.score + '점). ' + (res.gap12 < 0.3 ? '1위와 거의 붙어 있어서 두 행성의 색이 같이 보여요.' : '필요할 때 꺼내는 보조 엔진이에요.');
+  var hu = HU[dom], W = weatherOf(res), stemLine = S.dayStem != null ? STEM_INFO[S.dayStem][1] : EL[sen].desc;
+  var star = null, syncTier = null, subCode = '', secondLine = '', f2, fl;
+  if (!lite) {
+    star = clarityOf(res);
+    subCode = Saju.STEMS[S.dayStem] + EL[sen].h + ' · ' + (bal ? '오성' : REL[res.relKey].name.replace('형', '')) + ' · ' + (yy === 'yang' ? '양' : yy === 'yin' ? '음' : '균형');
+    syncTier = res.sync >= 70 ? ['사주 대본대로 사는 중', '타고난 오행 모양과 지금의 성격 모양이 꽤 닮았어요.']
+      : res.sync >= 45 ? ['대본 반, 애드리브 반', '타고난 결을 바탕으로, 살면서 꽤 많은 부분을 고쳐 썼어요.']
+      : ['대본을 고쳐 쓴 사람', '타고난 오행과 지금의 성격 모양이 많이 달라요. 스스로 새 항로를 만든 사람.'];
+    f2 = res.factors[res.second]; fl = res.factors[res.low];
+    secondLine = '두 번째로 잘 맞는 역할은 ' + ROLE[res.second].name + '(' + EL[res.second].trait + ' ' + f2.score + '점). ' + (res.gap12 < 0.3 ? '1위와 거의 붙어 있어서 두 역할을 같이 해내요.' : '필요할 때 꺼내 쓰는 부캐예요.');
+  }
 
-  var h = '';
+  var h = '', badges = [];
+  if (star) badges.push('<span class="badge star">★ ' + star.label + '</span>');
+  else if (res.starLabel) badges.push('<span class="badge star">★ ' + esc(res.starLabel) + '</span>');
+  if (yy) badges.push('<span class="badge">' + yyName + '</span>');
+  if (lite) badges.push('<span class="badge key">간편 보기</span>');
   h += '<div class="card hero reveal"><span class="hero-tag">' + who + '</span>' + orbitSVG(res) +
-    '<div class="code-row"><span class="code-chip">' + codeHtml + '</span><span class="code-read">' + esc(codeRead) + '</span></div>' +
-    '<h1 class="type-name">' + t[0] + '</h1><p class="type-sub">' + EL[sen].planet + '에서 태어나 ' + (res.balanced ? '다섯 궤도를 고르게 도는' : EL[dom].planet + ' 궤도를 도는') + ' 사람</p>' +
+    '<div class="formal">' + formalHtml(sen, dom, bal) + '</div>' +
+    '<h1 class="type-name">' + title + '</h1><p class="type-sub">' + EL[sen].planet + '에서 태어나 우주선에서 ' + (bal ? '어느 자리든 맡는' : ROLE[dom].does) + ' 사람</p>' +
     '<div class="bubble">' + t[1] + '</div><p class="summary">' + t[2] + '</p>' +
-    '<div class="badges"><span class="badge star">★ ' + star.label + '</span><span class="badge key">' + (res.balanced ? '균형 궤도' : REL[res.relKey].name) + '</span><span class="badge">세부유형 ' + subCode + '</span><span class="badge">' + yyName + '</span></div></div>';
+    '<div class="badges">' + badges.join('') + '</div></div>';
 
-  var v = res.validity, vm = [];
-  if (v.attFail) vm.push(['집중 확인', '확인 문항 ' + v.attFail + '개를 놓쳤어요. 빠르게 넘겼다면 결과가 흔들릴 수 있어요.']);
-  if (v.straight) vm.push(['한결같은 답', '대부분 같은 답을 골랐어요. 성향 차이가 잘 드러나지 않아요.']);
-  if (v.fcSame) vm.push(['A·B 한쪽만', 'A·B 문항에서 모두 같은 번호만 골랐어요. 궤도 판정이 흔들렸을 수 있어요.']);
-  if (v.acqHigh) vm.push(['무조건 ‘그렇다’', '반대 방향 문항에도 대부분 동의했어요. 점수가 부풀려졌을 수 있어요.']);
-  if (v.acqLow) vm.push(['무조건 ‘아니다’', '반대 방향 문항에도 대부분 반대했어요. 점수가 눌렸을 수 있어요.']);
-  if (v.mid) vm.push(['중간 응답', '대부분 3·4번만 골랐어요. 성향 차이가 실제보다 작게 나왔을 수 있어요' + (res.balanced ? '. 오성취(균형형)도 이 영향일 수 있어요.' : '.')]);
-  if (v.sdHigh) vm.push(['너무 반듯한 답', '‘험담한 적 없다’, ‘짜증 낸 적 없다’에 모두 높게 답했어요. 천사이거나 조금 좋게 보이고 싶었거나.']);
-  var vHtml = vm.length ? '<div class="card alert' + (v.severe ? ' bad' : '') + '"><h3>' + mascot(1, 30, 'o') + (v.severe ? '응답이 조금 흔들렸어요' : '참고해 주세요') + '</h3>' +
-    '<p class="lead2">' + (v.severe ? '결과는 보여드리지만, 한 번 더 천천히 해보는 걸 추천해요.' : '결과 해석에 살짝 참고하면 좋아요.') + '</p><ul>' +
-    vm.map(function (x) { return '<li><span class="t">' + x[0] + '</span>' + x[1] + '</li>'; }).join('') + '</ul></div>' : '';
-  if (v.severe) h += vHtml;
+  var v = res.validity, vm = [], vHtml = '';
+  if (!lite) {
+    if (v.attFail) vm.push(['집중 확인', '확인 문항 ' + v.attFail + '개를 놓쳤어요. 빠르게 넘겼다면 결과가 흔들릴 수 있어요.']);
+    if (v.straight) vm.push(['한결같은 답', '대부분 같은 답을 골랐어요. 성향 차이가 잘 드러나지 않아요.']);
+    if (v.fcSame) vm.push(['A·B 한쪽만', 'A·B 문항에서 모두 같은 번호만 골랐어요. 역할 판정이 흔들렸을 수 있어요.']);
+    if (v.acqHigh) vm.push(['무조건 ‘그렇다’', '반대 방향 문항에도 대부분 동의했어요. 점수가 부풀려졌을 수 있어요.']);
+    if (v.acqLow) vm.push(['무조건 ‘아니다’', '반대 방향 문항에도 대부분 반대했어요. 점수가 눌렸을 수 있어요.']);
+    if (v.mid) vm.push(['중간 응답', '대부분 3·4번만 골랐어요. 성향 차이가 실제보다 작게 나왔을 수 있어요' + (bal ? '. 만능 크루원(균형형)도 이 영향일 수 있어요.' : '.')]);
+    if (v.sdHigh) vm.push(['너무 반듯한 답', '‘험담한 적 없다’, ‘짜증 낸 적 없다’에 모두 높게 답했어요. 천사이거나 조금 좋게 보이고 싶었거나.']);
+    vHtml = vm.length ? '<div class="card alert' + (v.severe ? ' bad' : '') + '"><h3>' + mascot(1, 30, 'o') + (v.severe ? '응답이 조금 흔들렸어요' : '참고해 주세요') + '</h3>' +
+      '<p class="lead2">' + (v.severe ? '결과는 보여드리지만, 한 번 더 천천히 해보는 걸 추천해요.' : '결과 해석에 살짝 참고하면 좋아요.') + '</p><ul>' +
+      vm.map(function (x) { return '<li><span class="t">' + x[0] + '</span>' + x[1] + '</li>'; }).join('') + '</ul></div>' : '';
+    if (v.severe) h += vHtml;
+  }
 
-  h += '<div class="tiles">' +
-    '<div class="tile">' + mascot(sen, 44) + '<div><div class="k">태생 행성</div><div class="v">' + EL[sen].planet + '</div><div class="s">일간 ' + Saju.STEMS[S.dayStem] + EL[sen].h + ' · ' + STEM_INFO[S.dayStem][0] + '</div></div></div>' +
-    '<div class="tile">' + mascot(dom, 44) + '<div><div class="k">현재 궤도</div><div class="v">' + EL[dom].planet + '</div><div class="s">' + EL[dom].trait + ' ' + res.factors[dom].score + '점 · ' + res.factors[dom].level + (res.balanced ? ' · 근소 우세' : '') + '</div></div></div>' +
-    '<div class="tile">' + ring(res.sync) + '<div><div class="k">싱크로율</div><div class="v">' + res.sync + '%</div><div class="s">' + syncTier[0] + '</div></div></div></div>';
+  if (!lite) {
+    h += '<div class="tiles">' +
+      '<div class="tile">' + mascot(sen, 44) + '<div><div class="k">출신 행성</div><div class="v">' + EL[sen].planet + '</div><div class="s">일간 ' + Saju.STEMS[S.dayStem] + EL[sen].h + ' · ' + STEM_INFO[S.dayStem][0] + '</div></div></div>' +
+      '<div class="tile">' + roleBadge(dom, 44) + '<div><div class="k">크루 역할</div><div class="v">' + (bal ? '만능 크루원' : ROLE[dom].name) + '</div><div class="s">' + EL[dom].trait + ' ' + res.factors[dom].score + '점 · ' + res.factors[dom].level + (bal ? ' · 근소 우세' : '') + '</div></div></div>' +
+      '<div class="tile">' + ring(res.sync) + '<div><div class="k">싱크로율</div><div class="v">' + res.sync + '%</div><div class="s">' + syncTier[0] + '</div></div></div></div>';
+  } else {
+    h += '<div class="tiles t2">' +
+      '<div class="tile">' + mascot(sen, 44) + '<div><div class="k">출신 행성</div><div class="v">' + EL[sen].planet + '</div><div class="s">' + (S.dayStem != null ? '일간 ' + Saju.STEMS[S.dayStem] + EL[sen].h + ' · ' + STEM_INFO[S.dayStem][0] : EL[sen].h + ' · 고른 행성') + '</div></div></div>' +
+      '<div class="tile">' + roleBadge(dom, 44) + '<div><div class="k">크루 역할</div><div class="v">' + (bal ? '만능 크루원' : ROLE[dom].name) + '</div><div class="s">' + EL[dom].trait + (bal ? ' · 근소 우세' : ' · ' + ROLE[dom].verb) + '</div></div></div></div>';
+    h += '<div class="card lite-cta"><p>' + (res.full ? '점수와 사주 원국은 저장하지 않아서, 다시 보려면 50문항 검사를 해 주세요.' : '검사 없이 고른 유형이에요. 50문항으로 내 역할이 맞는지 확인해 보세요.') + '</p><button class="btn soft" id="lite-test">50문항 검사하기</button></div>';
+  }
 
-  var loud = res.flags.filter(function (f) { return !f.quiet; }), quiet = res.flags.filter(function (f) { return f.quiet; });
+  var loud = lite ? [] : res.flags.filter(function (f) { return !f.quiet; }), quiet = lite ? [] : res.flags.filter(function (f) { return f.quiet; });
   if (loud.length) {
     h += '<div class="card alert"><h3>' + mascot(3, 30, 'o') + '경계에 걸쳐 있어요</h3><p class="lead2">기록 오차나 계산 방식에 따라 다르게 볼 수 있는 부분이에요.</p><ul>' +
       loud.map(function (f) { return '<li><span class="t">' + f.title + '</span>' + f.msg + (f.alt ? '<br><span class="alt">다른 해석 · ' + esc(f.alt) + '</span>' : '') + '</li>'; }).join('') + '</ul></div>';
   }
 
-  // 오늘의 우주 날씨
-  h += '<div class="card weather" id="weather">' + weatherIcon(W.sky) + '<div><div class="date">' + W.date + ' · 오늘의 일진 ' + W.iljin + '(' + W.iljinKo + ')일</div>' +
-    '<h3>오늘의 우주 날씨 · ' + W.sky + '</h3><p>' + W.text + '</p>' +
-    '<div class="lucky"><span><i style="background:' + W.color[1] + '"></i>행운의 색 ' + W.color[0] + '</span><span>행운의 숫자 ' + W.num + '</span><span>행운의 방향 ' + W.dir + '</span></div></div>' +
-    '<p class="fine">당신의 일간(' + Saju.STEMS[S.dayStem] + ')과 오늘 일진의 관계(' + W.god + ')로 매일 바뀌어요. 재미로 봐 주세요.</p></div>';
+  h += weatherCard(W);
 
-  // 탭
-  h += '<div class="tabs" role="tablist">' + [['p1', '성격'], ['p5', 'TMI'], ['p2', '사주'], ['p3', '점수'], ['p4', '궁합']].map(function (x, i) {
+  var tabList = lite ? [['p1', '성격'], ['p5', 'TMI'], ['p4', '궁합']] : [['p1', '성격'], ['p5', 'TMI'], ['p2', '사주'], ['p3', '점수'], ['p4', '궁합']];
+  h += '<div class="tabs" role="tablist">' + tabList.map(function (x, i) {
     return '<button class="tab" role="tab" id="t-' + x[0] + '" aria-controls="' + x[0] + '" aria-selected="' + (i === 0) + '">' + x[1] + '</button>'; }).join('') + '</div>';
 
   // 성격
-  var specs = specsOf(res);
-  var allFac = []; res.factors.forEach(function (f) { f.facets.forEach(function (x) { allFac.push(x); }); });
-  var fzMean = mean(allFac.map(function (x) { return x.z; }));
-  var byRel = allFac.slice().sort(function (a, b) { return (b.z - fzMean) - (a.z - fzMean) || (a.f * 2 + a.k) - (b.f * 2 + b.k); });
-  var fx = { top: byRel.slice(0, 2), bot: byRel[byRel.length - 1] };
   h += '<div class="panel card" role="tabpanel" id="p1" aria-labelledby="t-p1"><h2 class="sec-h">이런 사람이에요</h2><p class="para">' + relLine + '</p>' +
     '<div class="two"><div class="box"><h4>빛나는 순간</h4><ul class="list">' + hu.strengths.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul></div>' +
     '<div class="box"><h4>궤도 이탈 주의</h4><ul class="list warn">' + hu.watch.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul></div></div>' +
-    '<div class="two"><div class="box"><h4>잘 맞는 무대</h4><p class="para" style="margin:0">' + hu.stage + '. ' + secondLine + '</p></div>' +
-    '<div class="box"><h4>엔진 · ' + yyName + '</h4><p class="para" style="margin:0">' + yyText + '</p></div></div>' +
-    '<h3 class="sec-h" style="margin-top:20px">나만의 결</h3><p class="muted small">하위요인 10개 중 당신에게서 가장 두드러진 것과 가장 덜 쓰는 것이에요.</p>' +
-    '<div class="traits">' + fx.top.map(function (x) { return '<span class="trait hi">' + mascot(x.f, 22) + FACET_PHRASE[x.f * 2 + x.k][0] + '</span>'; }).join('') +
-    '<span class="trait lo">' + mascot(fx.bot.f, 22) + FACET_PHRASE[fx.bot.f * 2 + fx.bot.k][1] + '</span></div>' +
-    '<p class="small muted" style="margin-top:8px">가장 덜 쓰는 궤도는 ' + EL[res.low].planet + '(' + EL[res.low].trait + ' ' + fl.score + '점)이에요. 그 힘이 필요한 자리에서는 에너지가 조금 더 들 수 있어요.</p>' +
-    '<h3 class="sec-h" style="margin-top:20px">내 행성 스펙</h3><p class="muted small">성격 점수를 행성 관측값으로 바꿔 봤어요.</p><div class="specs">' +
-    specs.map(function (x) { return '<div class="spec"><div class="nm">' + (x.e >= 0 ? mascot(x.e, 22) : '') + x.name + '</div><div class="num">' + x.num + '<small>' + x.unit + '</small></div><div class="src">' + x.src + '</div></div>'; }).join('') +
-    '</div><div class="box" style="margin-top:12px;display:flex;gap:12px;align-items:center"><div style="font-family:var(--disp);font-size:30px;color:#FFD27E;white-space:nowrap">★ ' + star.label + '</div><p class="para" style="margin:0">' + star.text + '</p></div></div>';
+    '<div class="two"><div class="box"><h4>잘 맞는 무대</h4><p class="para" style="margin:0">' + hu.stage + '.' + (secondLine ? ' ' + secondLine : '') + '</p></div>' +
+    (yy ? '<div class="box"><h4>엔진 · ' + yyName + '</h4><p class="para" style="margin:0">' + yyText + '</p></div>'
+      : '<div class="box"><h4>' + EL[sen].planet + ' 출신이라면</h4><p class="para" style="margin:0">' + stemLine + '</p></div>') + '</div>';
+  if (!lite) {
+    var specs = specsOf(res), allFac = [];
+    res.factors.forEach(function (f) { f.facets.forEach(function (x) { allFac.push(x); }); });
+    var fzMean = mean(allFac.map(function (x) { return x.z; }));
+    var byRel = allFac.slice().sort(function (a, c) { return (c.z - fzMean) - (a.z - fzMean) || (a.f * 2 + a.k) - (c.f * 2 + c.k); });
+    var fx = { top: byRel.slice(0, 2), bot: byRel[byRel.length - 1] };
+    h += '<h3 class="sec-h" style="margin-top:20px">나만의 결</h3><p class="muted small">하위요인 10개 중 당신에게서 가장 두드러진 것과 가장 덜 쓰는 것이에요.</p>' +
+      '<div class="traits">' + fx.top.map(function (x) { return '<span class="trait hi">' + roleBadge(x.f, 22) + FACET_PHRASE[x.f * 2 + x.k][0] + '</span>'; }).join('') +
+      '<span class="trait lo">' + roleBadge(fx.bot.f, 22) + FACET_PHRASE[fx.bot.f * 2 + fx.bot.k][1] + '</span></div>' +
+      '<p class="small muted" style="margin-top:8px">가장 덜 맡는 역할은 ' + ROLE[res.low].name + '(' + EL[res.low].trait + ' ' + fl.score + '점)이에요. 그 힘이 필요한 자리에서는 에너지가 조금 더 들 수 있어요.</p>' +
+      '<h3 class="sec-h" style="margin-top:20px">내 행성 스펙</h3><p class="muted small">성격 점수를 행성 관측값으로 바꿔 봤어요.</p><div class="specs">' +
+      specs.map(function (x) { return '<div class="spec"><div class="nm">' + (x.e >= 0 ? roleBadge(x.e, 22) : '') + x.name + '</div><div class="num">' + x.num + '<small>' + x.unit + '</small></div><div class="src">' + x.src + '</div></div>'; }).join('') +
+      '</div><div class="box" style="margin-top:12px;display:flex;gap:12px;align-items:center"><div style="font-family:var(--disp);font-size:30px;color:#FFD27E;white-space:nowrap">★ ' + star.label + '</div><p class="para" style="margin:0">' + star.text + '</p></div>';
+  }
+  h += '</div>';
 
   // TMI
   var tmi = TMI[dom];
-  h += '<div class="panel card" role="tabpanel" id="p5" aria-labelledby="t-p5" hidden><h2 class="sec-h">' + mascot(dom, 30) + EL[dom].planet + ' 궤도 사람의 TMI</h2><p class="muted small">현재 궤도 ' + EL[dom].trait + '이 강한 사람들이 흔히 하는 행동이에요.</p><ul class="tmi">' +
+  h += '<div class="panel card" role="tabpanel" id="p5" aria-labelledby="t-p5" hidden><h2 class="sec-h">' + roleBadge(dom, 30) + ROLE[dom].name + '의 TMI</h2><p class="muted small">' + EL[dom].trait + '이 강한 ' + ROLE[dom].name + '들이 흔히 하는 행동이에요.</p><ul class="tmi">' +
     TMI_SIT.map(function (st, i) { return '<li><span class="sit">' + st + '</span><span>' + tmi[i] + '</span></li>'; }).join('') +
-    '<li><span class="sit">엔진 옵션</span><span>' + (res.yy === 'yang' ? '위 행동을 남들보다 반 박자 빨리 실행해요.' : res.yy === 'yin' ? '위 행동을 하기 전에 한 번 더 검토해요.' : '상황 따라 빨리도, 천천히도 해요.') + '</span></li></ul>' +
-    '<p class="small muted" style="margin-top:10px">태생 행성 ' + EL[sen].planet + ' 한 줄: ' + STEM_INFO[S.dayStem][1] + '</p></div>';
+    (yy ? '<li><span class="sit">엔진 옵션</span><span>' + (yy === 'yang' ? '위 행동을 남들보다 반 박자 빨리 실행해요.' : yy === 'yin' ? '위 행동을 하기 전에 한 번 더 검토해요.' : '상황 따라 빨리도, 천천히도 해요.') + '</span></li>' : '') + '</ul>' +
+    '<p class="small muted" style="margin-top:10px">' + EL[sen].planet + ' 출신 한 줄: ' + stemLine + '</p></div>';
 
-  // 사주
-  var cell = function (key, label) {
-    var p = P[key];
-    if (!p) return '<div class="pillar empty"><div class="ph">' + label + '</div><div class="god">&nbsp;</div><div class="g">?</div><div class="rd">시각 모름</div><div class="g">?</div><div class="god">&nbsp;</div></div>';
-    var sc = DEEP[Saju.STEM_EL[p.stem]], bc = DEEP[Saju.BR_EL[p.branch]];
-    return '<div class="pillar' + (key === 'day' ? ' me' : '') + '"><div class="ph">' + label + '</div><div class="god">' + G[key].stem + '</div>' +
-      '<div class="g" style="color:' + sc + ';background:' + sc + '22">' + Saju.STEMS[p.stem] + '</div><div class="rd">' + Saju.STEMS_KO[p.stem] + Saju.BRANCHES_KO[p.branch] + '</div>' +
-      '<div class="g" style="color:' + bc + ';background:' + bc + '22">' + Saju.BRANCHES[p.branch] + '</div><div class="god">' + G[key].branch + '</div></div>';
-  };
-  var nChars = S.timeKnown ? 8 : 6, st = S.solarTime;
-  var missing = S.elements.map(function (n, i) { return n ? null : EL[i].h; }).filter(Boolean);
-  var calcNote = b.timeKnown ? ((b.noSolarCorrection ? '표준시 ' : '태양시 ') + pad2(st.h) + ':' + pad2(st.mi) + ' 기준' + (b.yajasi ? ' · 야자시' : '')) : '시각 모름 · 세 기둥으로 계산';
-  h += '<div class="panel card" role="tabpanel" id="p2" aria-labelledby="t-p2" hidden><h2 class="sec-h">사주 원국</h2><p class="muted small">' + b.year + '.' + b.month + '.' + b.day + (b.timeKnown ? ' ' + pad2(b.hour) + ':' + pad2(b.minute) : '') + ' · ' + S.animal + '띠 · ' + calcNote + '</p>' +
-    '<div class="pillars" style="margin-top:10px">' + cell('hour', '시주') + cell('day', '일주 · 나') + cell('month', '월주') + cell('year', '연주') + '</div>' +
-    '<div class="two"><div class="box"><h4>일간 ' + Saju.STEMS[S.dayStem] + ' · ' + STEM_INFO[S.dayStem][0] + '</h4><p class="para" style="margin:0">' + STEM_INFO[S.dayStem][1] + '</p>' +
-    '<p class="small muted" style="margin-top:8px">' + EL[sen].planet + ' — ' + EL[sen].desc + '</p></div>' +
-    '<div class="box"><h4>기운의 세기 · ' + S.strength + '</h4><p class="para" style="margin:0">' + (S.strength === '신강' ? '나를 돕는 기운이 많아요. 자기 색이 뚜렷하고 버티는 힘이 좋아요.' : S.strength === '신약' ? '주변 기운이 더 강해요. 좋은 환경과 사람을 만날 때 크게 피어나요.' : '나를 돕는 기운과 주변 기운이 비슷해요. 상황 적응력이 좋아요.') + '</p></div></div>' +
-    '<h3 class="sec-h" style="margin-top:18px">사주 속 오행 (' + nChars + '글자)</h3><div class="bars">' +
-    S.elements.map(function (n, i) { return '<div class="bar-row"><div class="lab"><span class="hanja" style="color:' + DEEP[i] + '">' + EL[i].h + '</span>' + EL[i].planet + '</div>' + bar(Math.round(n / nChars * 100), DEEP[i]) + '<div class="val">' + n + '</div></div>'; }).join('') + '</div>' +
-    (quiet.length ? '<p class="note" style="margin-top:12px">' + quiet.map(function (f) { return f.msg + (f.alt ? ' (다른 해석: ' + esc(f.alt) + ')' : ''); }).join('<br>') + '</p>' : '') +
-    '<p class="small muted">' + (missing.length ? '사주에 없는 기운: ' + missing.join(' · ') + ' — 약점이 아니라 살면서 채울 여백이에요.' : '다섯 기운이 모두 들어 있는 사주예요.') + '</p></div>';
+  if (!lite) {
+    // 사주
+    var P = S.pillars, G = S.gods;
+    var cell = function (key, label) {
+      var p = P[key];
+      if (!p) return '<div class="pillar empty"><div class="ph">' + label + '</div><div class="god">&nbsp;</div><div class="g">?</div><div class="rd">시각 모름</div><div class="g">?</div><div class="god">&nbsp;</div></div>';
+      var sc = DEEP[Saju.STEM_EL[p.stem]], bc = DEEP[Saju.BR_EL[p.branch]];
+      return '<div class="pillar' + (key === 'day' ? ' me' : '') + '"><div class="ph">' + label + '</div><div class="god">' + G[key].stem + '</div>' +
+        '<div class="g" style="color:' + sc + ';background:' + sc + '22">' + Saju.STEMS[p.stem] + '</div><div class="rd">' + Saju.STEMS_KO[p.stem] + Saju.BRANCHES_KO[p.branch] + '</div>' +
+        '<div class="g" style="color:' + bc + ';background:' + bc + '22">' + Saju.BRANCHES[p.branch] + '</div><div class="god">' + G[key].branch + '</div></div>';
+    };
+    var nChars = S.timeKnown ? 8 : 6, st = S.solarTime;
+    var missing = S.elements.map(function (n, i) { return n ? null : EL[i].h; }).filter(Boolean);
+    var calcNote = b.timeKnown ? ((b.noSolarCorrection ? '표준시 ' : '태양시 ') + pad2(st.h) + ':' + pad2(st.mi) + ' 기준' + (b.yajasi ? ' · 야자시' : '')) : '시각 모름 · 세 기둥으로 계산';
+    h += '<div class="panel card" role="tabpanel" id="p2" aria-labelledby="t-p2" hidden><h2 class="sec-h">사주 원국</h2><p class="muted small">' + b.year + '.' + b.month + '.' + b.day + (b.timeKnown ? ' ' + pad2(b.hour) + ':' + pad2(b.minute) : '') + ' · ' + S.animal + '띠 · ' + calcNote + '</p>' +
+      '<div class="pillars" style="margin-top:10px">' + cell('hour', '시주') + cell('day', '일주 · 나') + cell('month', '월주') + cell('year', '연주') + '</div>' +
+      '<div class="two"><div class="box"><h4>일간 ' + Saju.STEMS[S.dayStem] + ' · ' + STEM_INFO[S.dayStem][0] + '</h4><p class="para" style="margin:0">' + STEM_INFO[S.dayStem][1] + '</p>' +
+      '<p class="small muted" style="margin-top:8px">' + EL[sen].planet + ' — ' + EL[sen].desc + '</p></div>' +
+      '<div class="box"><h4>기운의 세기 · ' + S.strength + '</h4><p class="para" style="margin:0">' + (S.strength === '신강' ? '나를 돕는 기운이 많아요. 자기 색이 뚜렷하고 버티는 힘이 좋아요.' : S.strength === '신약' ? '주변 기운이 더 강해요. 좋은 환경과 사람을 만날 때 크게 피어나요.' : '나를 돕는 기운과 주변 기운이 비슷해요. 상황 적응력이 좋아요.') + '</p></div></div>' +
+      '<h3 class="sec-h" style="margin-top:18px">사주 속 오행 (' + nChars + '글자)</h3><div class="bars">' +
+      S.elements.map(function (n, i) { return '<div class="bar-row"><div class="lab"><span class="hanja" style="color:' + DEEP[i] + '">' + EL[i].h + '</span>' + EL[i].planet + '</div>' + bar(Math.round(n / nChars * 100), DEEP[i]) + '<div class="val">' + n + '</div></div>'; }).join('') + '</div>' +
+      (quiet.length ? '<p class="note" style="margin-top:12px">' + quiet.map(function (f) { return f.msg + (f.alt ? ' (다른 해석: ' + esc(f.alt) + ')' : ''); }).join('<br>') + '</p>' : '') +
+      '<p class="small muted">' + (missing.length ? '사주에 없는 기운: ' + missing.join(' · ') + ' — 약점이 아니라 살면서 채울 여백이에요.' : '다섯 기운이 모두 들어 있는 사주예요.') + '</p>' +
+      '<p class="small muted">세부 코드 · ' + subCode + '</p></div>';
 
-  // 점수
-  var yyPos = Math.max(4, Math.min(96, 50 + res.yyDiff * 18));
-  var expert = '<table class="data"><thead><tr><th>척도</th><th class="n">평균</th><th class="n">점수</th><th class="n">잠정 z</th><th class="n">A·B</th><th class="n">지수</th></tr></thead><tbody>';
-  res.factors.forEach(function (f) {
-    expert += '<tr><td>' + EL[f.f].h + ' ' + EL[f.f].trait + '</td><td class="n">' + f.mean.toFixed(2) + '</td><td class="n">' + f.score + '</td><td class="n">' + f.z.toFixed(2) + '</td><td class="n">' + f.fcPts + '</td><td class="n">' + f.T.toFixed(2) + '</td></tr>';
-    f.facets.forEach(function (fc) { expert += '<tr><td class="muted">└ ' + fc.name + '</td><td class="n">' + fc.mean.toFixed(2) + '</td><td class="n">' + fc.score + '</td><td class="n">' + fc.z.toFixed(2) + '</td><td></td><td></td></tr>'; });
-  });
-  expert += '<tr><td>양 · BAS</td><td class="n">' + res.bas.mean.toFixed(2) + '</td><td class="n">' + score100(res.bas.mean) + '</td><td class="n">' + res.bas.z.toFixed(2) + '</td><td></td><td></td></tr>';
-  expert += '<tr><td>음 · BIS</td><td class="n">' + res.bis.mean.toFixed(2) + '</td><td class="n">' + score100(res.bis.mean) + '</td><td class="n">' + res.bis.z.toFixed(2) + '</td><td></td><td></td></tr></tbody></table>' +
-    '<p class="small muted" style="margin-top:6px">지수 = 0.5×(개인 안 상대 z) + 0.5×(A·B 점수−6)/3 · 싱크로율 = 50+40r, r = ' + res.syncR.toFixed(2) + ' · 1·2위 차 ' + res.gap12.toFixed(2) + ' · 최고−최저 ' + res.range.toFixed(2) + ' · 별 등급 기준 ' + star.d.toFixed(2) + ' · 묵종 지수 ' + res.validity.acq.toFixed(2) + '</p>';
-  h += '<div class="panel card" role="tabpanel" id="p3" aria-labelledby="t-p3" hidden><h2 class="sec-h">심리 오행 프로필</h2><p class="muted small">숫자는 응답 그대로의 점수(0~100)예요. 전부 ‘그렇다’면 80점쯤 나와요. 옆의 수준은 잠정 기준과 비교한 거예요.</p><div class="bars">' +
-    res.factors.map(function (f) { var e = f.f; return '<div class="bar-row"><div class="lab"><span class="hanja" style="color:' + DEEP[e] + '">' + EL[e].h + '</span>' + EL[e].trait + '</div>' + bar(f.score, DEEP[e]) + '<div class="val">' + f.score + '<span class="lv">' + f.level + '</span></div></div>' +
-      '<div class="facets">' + f.facets.map(function (fc) { return '<div class="facet"><span>' + fc.name + '</span>' + bar(fc.score, DEEP[e]) + '<span class="val">' + fc.score + '</span></div>'; }).join('') + '</div>'; }).join('') + '</div>' +
-    '<h3 class="sec-h" style="margin-top:18px">궤도 순위</h3><p class="muted small">궤도는 점수의 높이만이 아니라, 다섯 성향 중 당신 안에서 상대적으로 두드러지는 정도와 A·B 선택을 함께 따져 정해요. 그래서 점수가 가장 높은 성향과 궤도가 다를 수 있어요.</p><ol class="rank">' +
-    res.sorted.map(function (e, i) { var f = res.factors[e]; return '<li' + (i === 0 ? ' class="top"' : '') + '><span class="no">' + (i + 1) + '</span>' + mascot(e, 26) + '<span class="nm">' + EL[e].planet + ' · ' + EL[e].trait + '</span><span class="meta">A·B ' + f.fcPts + '/12 · 지수 ' + (f.T >= 0 ? '+' : '') + f.T.toFixed(2) + '</span></li>'; }).join('') + '</ol>' +
-    '<div class="yy"><h3 class="sec-h" style="font-size:16px">음양 엔진</h3><div class="yy-scale"><div class="yy-mark" style="left:' + yyPos + '%"></div></div><div class="yy-ends"><span>음 · 신중</span><span>양 · 접근</span></div></div>' +
-    '<h3 class="sec-h" style="margin-top:22px">타고난 결 vs 살아온 결</h3>' +
-    '<div class="legend"><span><svg width="24" height="8"><line x1="0" y1="4" x2="24" y2="4" stroke="var(--s-saju)" stroke-width="2.5" stroke-dasharray="6 4"/></svg>사주 오행</span><span><svg width="24" height="8"><line x1="0" y1="4" x2="24" y2="4" stroke="var(--s-psy)" stroke-width="2.5"/></svg>궤도 지수</span></div>' +
-    '<div class="radar-wrap"><div>' + radarSVG(res) + '</div><div><div class="muted small">싱크로율</div><div class="sync">' + res.sync + '<small>%</small></div><p class="para"><b>' + syncTier[0] + '</b><br>' + syncTier[1] + '</p>' +
-    '<details style="margin-top:10px"><summary>표로 보기</summary><div class="inner"><table class="data"><thead><tr><th>오행</th><th class="n">사주</th><th class="n">궤도 지수</th></tr></thead><tbody>' +
-    EL.map(function (e, i) { return '<tr><td>' + e.h + ' ' + e.trait + '</td><td class="n">' + S.elements[i] + '</td><td class="n">' + (res.factors[i].T >= 0 ? '+' : '') + res.factors[i].T.toFixed(2) + '</td></tr>'; }).join('') + '</tbody></table></div></details></div></div>' +
-    '<p class="small muted">두 레이어 모두 가장 강한 기운을 바깥 선에 맞춰 모양만 비교해요.</p>' +
-    '<details style="margin-top:12px"><summary>전문가용 상세 점수</summary><div class="inner">' + expert + '</div></details></div>';
+    // 점수
+    var yyPos = Math.max(4, Math.min(96, 50 + res.yyDiff * 18));
+    var expert = '<table class="data"><thead><tr><th>척도</th><th class="n">평균</th><th class="n">점수</th><th class="n">잠정 z</th><th class="n">A·B</th><th class="n">지수</th></tr></thead><tbody>';
+    res.factors.forEach(function (f) {
+      expert += '<tr><td>' + EL[f.f].h + ' ' + EL[f.f].trait + '</td><td class="n">' + f.mean.toFixed(2) + '</td><td class="n">' + f.score + '</td><td class="n">' + f.z.toFixed(2) + '</td><td class="n">' + f.fcPts + '</td><td class="n">' + f.T.toFixed(2) + '</td></tr>';
+      f.facets.forEach(function (fc) { expert += '<tr><td class="muted">└ ' + fc.name + '</td><td class="n">' + fc.mean.toFixed(2) + '</td><td class="n">' + fc.score + '</td><td class="n">' + fc.z.toFixed(2) + '</td><td></td><td></td></tr>'; });
+    });
+    expert += '<tr><td>양 · BAS</td><td class="n">' + res.bas.mean.toFixed(2) + '</td><td class="n">' + score100(res.bas.mean) + '</td><td class="n">' + res.bas.z.toFixed(2) + '</td><td></td><td></td></tr>';
+    expert += '<tr><td>음 · BIS</td><td class="n">' + res.bis.mean.toFixed(2) + '</td><td class="n">' + score100(res.bis.mean) + '</td><td class="n">' + res.bis.z.toFixed(2) + '</td><td></td><td></td></tr></tbody></table>' +
+      '<p class="small muted" style="margin-top:6px">역할 지수 = 0.5×(개인 안 상대 z) + 0.5×(A·B 점수−6)/3 · 싱크로율 = 50+40r, r = ' + res.syncR.toFixed(2) + ' · 1·2위 차 ' + res.gap12.toFixed(2) + ' · 최고−최저 ' + res.range.toFixed(2) + ' · 별 등급 기준 ' + star.d.toFixed(2) + ' · 묵종 지수 ' + v.acq.toFixed(2) + '</p>';
+    h += '<div class="panel card" role="tabpanel" id="p3" aria-labelledby="t-p3" hidden><h2 class="sec-h">심리 오행 프로필</h2><p class="muted small">숫자는 응답 그대로의 점수(0~100)예요. 전부 ‘그렇다’면 80점쯤 나와요. 옆의 수준은 잠정 기준과 비교한 거예요.</p><div class="bars">' +
+      res.factors.map(function (f) { var e = f.f; return '<div class="bar-row"><div class="lab"><span class="hanja" style="color:' + DEEP[e] + '">' + EL[e].h + '</span>' + EL[e].trait + '</div>' + bar(f.score, DEEP[e]) + '<div class="val">' + f.score + '<span class="lv">' + f.level + '</span></div></div>' +
+        '<div class="facets">' + f.facets.map(function (fc) { return '<div class="facet"><span>' + fc.name + '</span>' + bar(fc.score, DEEP[e]) + '<span class="val">' + fc.score + '</span></div>'; }).join('') + '</div>'; }).join('') + '</div>' +
+      '<h3 class="sec-h" style="margin-top:18px">역할 순위</h3><p class="muted small">역할은 점수의 높이만이 아니라, 다섯 성향 중 당신 안에서 상대적으로 두드러지는 정도와 A·B 선택을 함께 따져 정해요. 그래서 점수가 가장 높은 성향과 역할이 다를 수 있어요.</p><ol class="rank">' +
+      res.sorted.map(function (e, i) { var f = res.factors[e]; return '<li' + (i === 0 ? ' class="top"' : '') + '><span class="no">' + (i + 1) + '</span>' + roleBadge(e, 26) + '<span class="nm">' + ROLE[e].name + ' · ' + EL[e].trait + '</span><span class="meta">A·B ' + f.fcPts + '/12 · 지수 ' + (f.T >= 0 ? '+' : '') + f.T.toFixed(2) + '</span></li>'; }).join('') + '</ol>' +
+      '<div class="yy"><h3 class="sec-h" style="font-size:16px">음양 엔진</h3><div class="yy-scale"><div class="yy-mark" style="left:' + yyPos + '%"></div></div><div class="yy-ends"><span>음 · 신중</span><span>양 · 접근</span></div></div>' +
+      '<h3 class="sec-h" style="margin-top:22px">타고난 결 vs 살아온 결</h3>' +
+      '<div class="legend"><span><svg width="24" height="8"><line x1="0" y1="4" x2="24" y2="4" stroke="var(--s-saju)" stroke-width="2.5" stroke-dasharray="6 4"/></svg>사주 오행</span><span><svg width="24" height="8"><line x1="0" y1="4" x2="24" y2="4" stroke="var(--s-psy)" stroke-width="2.5"/></svg>역할 지수</span></div>' +
+      '<div class="radar-wrap"><div>' + radarSVG(res) + '</div><div><div class="muted small">싱크로율</div><div class="sync">' + res.sync + '<small>%</small></div><p class="para"><b>' + syncTier[0] + '</b><br>' + syncTier[1] + '</p>' +
+      '<details style="margin-top:10px"><summary>표로 보기</summary><div class="inner"><table class="data"><thead><tr><th>오행</th><th class="n">사주</th><th class="n">역할 지수</th></tr></thead><tbody>' +
+      EL.map(function (e, i) { return '<tr><td>' + e.h + ' ' + e.trait + '</td><td class="n">' + S.elements[i] + '</td><td class="n">' + (res.factors[i].T >= 0 ? '+' : '') + res.factors[i].T.toFixed(2) + '</td></tr>'; }).join('') + '</tbody></table></div></details></div></div>' +
+      '<p class="small muted">두 레이어 모두 가장 강한 기운을 바깥 선에 맞춰 모양만 비교해요.</p>' +
+      '<details style="margin-top:12px"><summary>전문가용 상세 점수</summary><div class="inner">' + expert + '</div></details></div>';
+  }
 
-  // 궁합
+  // 궁합 (크루 케미)
   var me = { sen: sen, dom: dom };
   var gen = (dom + 4) % 5, out = (dom + 1) % 5, ctl = (dom + 3) % 5, hit = (dom + 2) % 5;
-  var ecards = [['충전 궤도', gen, '상생', '당신을 살려주는 궤도. ' + SHENG[gen] + '.'], ['돌봄 궤도', out, '상생', '당신이 키워주는 궤도. ' + SHENG[dom] + '.'],
-    ['주의 궤도', ctl, '상극', '당신을 누르기 쉬운 궤도. ' + KE[ctl] + '.'], ['부딪힘 궤도', hit, '상극', '당신이 모르게 누르기 쉬운 궤도. ' + KE[dom] + '.']].map(function (g) {
-    return '<div class="gung ' + (g[2] === '상극' ? 'ke' : 'sa') + '">' + mascot(g[1], 40) + '<div><div class="k">' + g[0] + ' <span class="kind">' + g[2] + '</span></div><div class="v">' + EL[g[1]].trait + '이 강한 사람</div><p>' + g[3] + '</p></div></div>'; }).join('');
+  var ecards = [['충전 역할', gen, '상생', '나를 살려주는 역할. ' + SHENG[gen] + '.'], ['돌봄 역할', out, '상생', '내가 밀어주는 역할. ' + SHENG[dom] + '.'],
+    ['주의 역할', ctl, '상극', '나를 누르기 쉬운 역할. ' + KE[ctl] + '.'], ['부딪힘 역할', hit, '상극', '내가 모르게 누르기 쉬운 역할. ' + KE[dom] + '.']].map(function (g) {
+    return '<div class="gung ' + (g[2] === '상극' ? 'ke' : 'sa') + '">' + roleBadge(g[1], 40) + '<div><div class="k">' + g[0] + ' <span class="kind">' + g[2] + '</span></div><div class="v">' + ROLE[g[1]].name + '</div><p>' + g[3] + '</p></div></div>'; }).join('');
   var ranked = rankAll(me), best = ranked.slice(0, 3), worst = ranked.slice(-3).reverse();
-  var chip = function (x) { return '<button class="mchip" data-r="' + x.r + '" data-c="' + x.c + '">' + mascot(x.c, 26) + '<span><b>' + TYPES[x.r][x.c][0] + '</b><small>' + x.cp.tier + '</small></span><em style="color:' + x.cp.color + '">' + x.cp.score + '</em></button>'; };
-  var opts = '<option value="">친구의 운명 유형을 골라 주세요</option>' + EL.map(function (e, r) {
-    return '<optgroup label="' + e.planet + '에서 태어난 친구">' + EL.map(function (_, c) { return '<option value="' + r + ',' + c + '">' + TYPES[r][c][0] + ' (' + EL[r].h + '→' + EL[c].h + ')</option>'; }).join('') + '</optgroup>';
-  }).join('');
-  var tmap = '<div class="tmap"><div class="hd">태생＼궤도</div>' + EL.map(function (e, i) { return '<div class="hd">' + mascot(i, 26) + e.trait + '</div>'; }).join('');
+  var chip = function (x) { return '<button class="mchip" data-r="' + x.r + '" data-c="' + x.c + '">' + roleBadge(x.c, 28) + '<span><b>' + typeTitle(x.r, x.c) + '</b><small>' + EL[x.r].planet + ' 출신 · ' + x.cp.tier + '</small></span><em style="color:' + x.cp.color + '">' + x.cp.score + '</em></button>'; };
+  var tmap = '<div class="tmap"><div class="hd">출신＼역할</div>' + ROLE.map(function (r, i) { return '<div class="hd">' + roleBadge(i, 26) + r.name + '</div>'; }).join('');
   for (var r = 0; r < 5; r++) {
     tmap += '<div class="rh">' + mascot(r, 26) + EL[r].planet + '</div>';
     for (var c = 0; c < 5; c++) {
-      var rk = Saju.relation(r, c), mine = !res.balanced && r === sen && c === dom, cpx = compatOf(me, { sen: r, dom: c });
-      tmap += '<button class="tcell' + (mine ? ' me pick' : '') + '" data-r="' + r + '" data-c="' + c + '"><span class="rl">' + (mine ? '나 · ' : '') + REL[rk].name + '</span><span class="nm">' + TYPES[r][c][0] + '</span><span class="sc" style="color:' + cpx.color + '">♥ ' + cpx.score + '</span></button>';
+      var mine = !bal && r === sen && c === dom, cpx = compatOf(me, { sen: r, dom: c });
+      tmap += '<button class="tcell' + (mine ? ' me pick' : '') + '" data-r="' + r + '" data-c="' + c + '" aria-label="' + typeTitle(r, c) + ', ' + EL[r].planet + ' 출신, 케미 ' + cpx.score + '점"><span class="rl">' + (mine ? '나' : '&nbsp;') + '</span><span class="nm">' + TYPES[r][c][0] + '</span><span class="sc" style="color:' + cpx.color + '">♥ ' + cpx.score + '</span></button>';
     }
   }
   tmap += '</div>';
-  h += '<div class="panel card" role="tabpanel" id="p4" aria-labelledby="t-p4" hidden><h2 class="sec-h">궤도 궁합 한눈에</h2><p class="muted small">현재 궤도 ' + EL[dom].h + '(' + EL[dom].planet + ') 기준 · 오행 상생상극</p><div class="gungs g4">' + ecards + '</div>' +
-    '<div class="two" style="margin-top:14px"><div class="box"><h4>찰떡 궤도 TOP 3</h4><div class="mlist">' + best.map(chip).join('') + '</div></div>' +
+  h += '<div class="panel card" role="tabpanel" id="p4" aria-labelledby="t-p4" hidden><h2 class="sec-h">크루 케미 한눈에</h2><p class="muted small">내 역할 ' + ROLE[dom].name + ' 기준 · 오행 상생상극을 크루 이야기로 옮겼어요</p><div class="gungs g4">' + ecards + '</div>' +
+    '<div class="two" style="margin-top:14px"><div class="box"><h4>찰떡 크루 TOP 3</h4><div class="mlist">' + best.map(chip).join('') + '</div></div>' +
     '<div class="box"><h4>블랙홀 주의 TOP 3</h4><div class="mlist">' + worst.map(chip).join('') + '</div></div></div>' +
-    '<div class="friend"><h3 class="sec-h" style="margin:0">친구와 궤도 궁합 보기</h3><p class="muted small">친구의 유형을 골라 보세요. 위 목록이나 아래 지도를 눌러도 돼요. 두 사람이 서로 보면 같은 점수가 나와요.</p>' +
-    '<select id="friend" aria-label="친구의 운명 유형">' + opts + '</select><div id="fres"></div></div>' +
-    '<h3 class="sec-h" style="margin-top:22px">25가지 운명 지도</h3><p class="muted small">칸마다 나와의 궁합 점수가 표시돼요.</p><p class="swipe muted small">옆으로 넘겨서 다섯 궤도를 모두 볼 수 있어요</p><div class="scroll-x">' + tmap + '</div>' +
-    '<div class="tdetail" id="tdetail">' + (res.balanced ? '칸을 누르면 한 줄 설명과 궁합이 나와요. 오성취형은 ' + EL[sen].planet + ' 줄 전체에 걸쳐 있어요.' : '<b>' + TYPES[sen][dom][0] + '</b> — ' + TYPES[sen][dom][1]) + '</div></div>';
+    '<div class="friend"><h3 class="sec-h" style="margin:0">친구와 크루 케미 보기</h3><p class="muted small">친구의 출신 행성과 역할을 골라 보세요. 위 목록이나 아래 지도를 눌러도 돼요. 두 사람이 서로 보면 같은 점수가 나와요.</p>' +
+    '<div class="grid2"><select id="fr-sen" aria-label="친구의 출신 행성"><option value="">출신 행성</option>' + EL.map(function (e, i) { return '<option value="' + i + '">' + e.planet + ' 출신</option>'; }).join('') + '</select>' +
+    '<select id="fr-dom" aria-label="친구의 역할"><option value="">역할</option>' + ROLE.map(function (x, i) { return '<option value="' + i + '">' + x.name + '</option>'; }).join('') + '</select></div><div id="fres"></div></div>' +
+    '<h3 class="sec-h" style="margin-top:22px">25가지 크루 지도</h3><p class="muted small">칸마다 칭호와 나와의 케미 점수가 보여요.</p><p class="swipe muted small">옆으로 넘겨서 다섯 역할을 모두 볼 수 있어요</p><div class="scroll-x">' + tmap + '</div>' +
+    '<div class="tdetail" id="tdetail">' + (bal ? '칸을 누르면 한 줄 설명과 케미가 나와요. 만능 크루원은 ' + EL[sen].planet + ' 줄 전체에 걸쳐 있어요.' : '<b>' + title + '</b> — ' + t[1]) + '</div>' +
+    '<div class="crew-cta-in"><div><b>우리 크루도 짜 볼까요?</b><p class="small muted">친구들 유형을 모아 최대 10명까지 크루 구성표를 만들어요.</p></div><button class="btn soft" id="to-crew">크루 구성표</button></div></div>';
 
   // 운명 카드
-  h += '<div class="card cardgen" id="cardgen"><h2 class="sec-h" style="justify-content:center">내 운명 카드</h2><p class="muted small">친구에게 보내거나 프로필에 올릴 수 있는 이미지 카드예요.</p>' +
-    '<div class="row"><button class="btn pri" id="make-card">운명 카드 만들기</button></div><div id="card-out"></div></div>';
+  h += '<div class="card cardgen" id="cardgen"><h2 class="sec-h" style="justify-content:center">내 크루 카드</h2><p class="muted small">친구에게 보내거나 프로필에 올릴 수 있는 이미지 카드예요.</p>' +
+    '<div class="row"><button class="btn pri" id="make-card">크루 카드 만들기</button></div><div id="card-out"></div></div>';
 
-  if (!v.severe) h += vm.length ? vHtml : '<div class="card" style="display:flex;align-items:center;gap:10px">' + mascot(0, 34) + '<p class="small" style="color:var(--ink-2)">응답 신뢰도 양호 · 집중 확인 문항 통과, 응답 패턴도 고르게 나왔어요.</p></div>';
+  if (res.saved) h += '<div class="card home-card obs-mini"><div class="hc-h">' + obsBadge(44) + '<div><h3>오늘의 관측</h3><small>매일 10문항 · 1분</small></div></div><p class="small" style="color:var(--ink-2)">오늘의 나는 어떤 역할에 가까울까요? 날마다 새 문항이 열려요.</p><button class="btn soft" id="to-obs">관측 시작</button></div>';
+
+  if (!lite && !v.severe) h += vm.length ? vHtml : '<div class="card" style="display:flex;align-items:center;gap:10px">' + mascot(0, 34) + '<p class="small" style="color:var(--ink-2)">응답 신뢰도 양호 · 집중 확인 문항 통과, 응답 패턴도 고르게 나왔어요.</p></div>';
   h += '<details class="card how"><summary>검사 설계와 한계</summary><div class="inner"><ul>' +
     '<li><b>측정</b> 리커트 30문항(5요인 × 하위요인 2개 × 3문항, 요인마다 반대 방향 문항 2개), A·B 양자택일 10쌍(오행 10가지 조합을 한 번씩), 음양 6문항, 타당도 4문항이에요.</li>' +
-    '<li><b>점수와 궤도</b> 막대의 점수는 응답 그대로의 0~100이에요. 궤도는 개인 안의 상대 점수와 A·B 선택을 반반 섞은 궤도 지수로 정해서, 모든 문항에 ‘그렇다’만 해도 한쪽으로 쏠리지 않아요. 높음·낮음 수준은 잠정 기준이라 참고용이에요.</li>' +
-    '<li><b>동점 처리</b> 궤도 지수가 같으면 A·B 선택 점수 → 사주에 더 많은 기운 → 하위요인 최고점 → 오행 순서로 정해요.</li>' +
-    '<li><b>재미 요소</b> 행성 스펙과 별 등급은 실제 점수에서 계산해요. 궁합은 두 사람의 현재 궤도(50%)·태생 행성(30%)·교차 관계(20%)의 상생상극으로 계산하고, 두 사람이 서로 보면 같은 점수가 나와요. 우주 날씨는 오늘 일진과 일간의 관계예요.</li>' +
+    '<li><b>점수와 역할</b> 막대의 점수는 응답 그대로의 0~100이에요. 역할은 개인 안의 상대 점수와 A·B 선택을 반반 섞은 역할 지수로 정해서, 모든 문항에 ‘그렇다’만 해도 한쪽으로 쏠리지 않아요. 높음·낮음 수준은 잠정 기준이라 참고용이에요.</li>' +
+    '<li><b>동점 처리</b> 역할 지수가 같으면 A·B 선택 점수 → 사주에 더 많은 기운 → 하위요인 최고점 → 오행 순서로 정해요.</li>' +
+    '<li><b>재미 요소</b> 행성 스펙과 별 등급은 실제 점수에서 계산해요. 케미는 두 사람의 역할(50%)·출신 행성(30%)·교차 관계(20%)의 상생상극으로 계산하고, 두 사람이 서로 보면 같은 점수가 나와요. 우주 날씨는 오늘 일진과 일간의 관계예요.</li>' +
     '<li><b>사주 계산</b> 양력 입력, 한국 표준시·서머타임 이력 반영, 행성이론(VSOP87)으로 절기를 1분 안쪽 오차로 구해요. 일주·시주는 출생지 경도 태양시 기준이에요.</li>' +
+    '<li><b>저장</b> 생년월일과 응답은 저장하지 않고, 결과 유형(출신 행성·역할)만 이 기기 브라우저에 남겨요. 오늘의 관측과 크루 구성표도 이 기기에만 저장돼요.</li>' +
     '<li><b>사주의 위치</b> 사주는 검증된 성격 예측 도구가 아니라 ‘타고난 결’이라는 문화적 서사예요.</li></ul></div></details>';
-  h += '<div class="actions"><button class="btn pri" id="copy-res">결과 요약 복사</button><button class="btn soft" id="retry">다시 하기</button></div>';
+  h += '<div class="actions"><button class="btn pri" id="copy-res">결과 요약 복사</button>' + (lite ? '<button class="btn soft" id="re-pick">유형 다시 고르기</button>' : '<button class="btn soft" id="retry">다시 하기</button>') + '</div>';
+  if (res.saved) h += '<p class="saved-note">결과 유형만 이 기기에 저장했어요. 다음엔 첫 화면에서 바로 이어 봐요. <button class="btn-link" id="forget">지우기</button></p>';
 
   var root = $('#s-result'); root.innerHTML = h;
 
@@ -1578,43 +1827,518 @@ function renderResult(res) {
   function showFriend(fr, fc) {
     var cp = compatOf(me, { sen: fr, dom: fc });
     $('#fres').innerHTML = '<div class="fres"><div class="meter">' + ring(cp.score, 92, cp.color) + '<b class="disp">' + cp.score + '</b></div><div>' +
-      '<div class="pair">' + mascot(dom, 26) + '<span class="muted small">×</span>' + mascot(fc, 26) + '<span class="small muted" style="margin-left:6px">' + TYPES[fr][fc][0] + ' · 궤도 ' + cp.kind + '</span></div>' +
+      '<div class="pair">' + roleBadge(dom, 26) + '<span class="muted small">×</span>' + roleBadge(fc, 26) + '<span class="small muted" style="margin-left:6px">' + typeTitle(fr, fc) + ' · ' + EL[fr].planet + ' 출신 · ' + cp.kind + '</span></div>' +
       '<h4 style="color:' + cp.color + '">' + cp.tier + '</h4><p>' + cp.orbit + '</p><p>' + cp.birth + '</p><p style="margin-top:6px"><b>한 줄 처방</b> · ' + cp.tierText + '</p></div></div>';
-    $('#friend').value = fr + ',' + fc;
+    $('#fr-sen').value = String(fr); $('#fr-dom').value = String(fc);
   }
-  $('#friend').addEventListener('change', function (e) { if (!e.target.value) { $('#fres').innerHTML = ''; return; } var p = e.target.value.split(',').map(Number); showFriend(p[0], p[1]); });
-  $$('.mchip', root).forEach(function (m) { m.addEventListener('click', function () { showFriend(+m.dataset.r, +m.dataset.c); $('#friend').scrollIntoView({ block: 'center', behavior: REDUCED ? 'auto' : 'smooth' }); }); });
+  function friendChange() { var a = $('#fr-sen').value, c2 = $('#fr-dom').value; if (a === '' || c2 === '') { $('#fres').innerHTML = ''; return; } showFriend(+a, +c2); }
+  $('#fr-sen').addEventListener('change', friendChange); $('#fr-dom').addEventListener('change', friendChange);
+  $$('.mchip', root).forEach(function (m) { m.addEventListener('click', function () { showFriend(+m.dataset.r, +m.dataset.c); $('#fr-sen').scrollIntoView({ block: 'center', behavior: REDUCED ? 'auto' : 'smooth' }); }); });
   $$('.tcell', root).forEach(function (cEl) {
     cEl.addEventListener('click', function () {
       $$('.tcell', root).forEach(function (x) { x.classList.remove('pick'); }); cEl.classList.add('pick');
       var rr = +cEl.dataset.r, cc = +cEl.dataset.c, rel = REL[Saju.relation(rr, cc)], cp = compatOf(me, { sen: rr, dom: cc });
-      $('#tdetail').innerHTML = '<b>' + TYPES[rr][cc][0] + '</b> <span class="muted">(' + rel.name + ')</span> — ' + TYPES[rr][cc][1] + '<br><span class="small" style="color:' + cp.color + '">나와의 궁합 ' + cp.score + ' · ' + cp.tier + '</span>';
+      $('#tdetail').innerHTML = '<b>' + typeTitle(rr, cc) + '</b> <span class="muted">(' + EL[rr].planet + ' 출신 · ' + rel.name + ')</span> — ' + TYPES[rr][cc][1] + '<br><span class="small" style="color:' + cp.color + '">나와의 케미 ' + cp.score + ' · ' + cp.tier + '</span>';
       showFriend(rr, cc);
     });
   });
+  $('#to-crew').addEventListener('click', function () { openCrew(); });
+  if ($('#to-obs')) $('#to-obs').addEventListener('click', function () { openObs(); });
+  if ($('#lite-test')) $('#lite-test').addEventListener('click', function () { show('s-birth'); });
 
-  // 운명 카드
+  // 크루 카드
   $('#make-card').addEventListener('click', function () {
     var btn = this; btn.disabled = true; btn.textContent = '카드 그리는 중…';
-    makeCard(res, { tag: b.name ? b.name + '님의 운명 행성' : '나의 운명 행성', name: t[0],
-      sub: EL[sen].planet + '에서 태어나 ' + (res.balanced ? '다섯 궤도를 고르게 도는' : EL[dom].planet + ' 궤도를 도는') + ' 사람',
-      pun: t[1], star: star.label, sync: res.sync + '%', sub2: subCode.replace(/ · /g, ' ') }).then(function (url) {
-      $('#card-out').innerHTML = '<img src="' + url + '" alt="' + esc(t[0]) + ' 운명 카드"><div class="row"><a class="btn pri" id="save-card" href="' + url + '" download="진우주_운명카드_' + esc(t[0].replace(/\s/g, '')) + '.png">이미지 저장</a></div><p class="small muted" style="margin-top:8px">휴대폰에서 저장이 안 되면 이미지를 길게 눌러 저장해 주세요.</p>';
+    makeCard(res, { tag: b.name ? b.name + '님의 운명 크루' : '나의 운명 크루', name: title, formal: formal,
+      sub: EL[sen].planet + '에서 태어나 우주선에서 ' + (bal ? '어느 자리든 맡는' : ROLE[dom].does) + ' 사람', pun: t[1],
+      stats: [['출신 행성', EL[sen].planet], ['크루 역할', bal ? '만능' : ROLE[dom].name], lite ? ['오늘 날씨', W.sky] : ['싱크로율', res.sync + '%']] }).then(function (url) {
+      $('#card-out').innerHTML = '<img src="' + url + '" alt="' + esc(title) + ' 크루 카드"><div class="row"><a class="btn pri" id="save-card" href="' + url + '" download="진우주_크루카드_' + esc(title.replace(/\s/g, '')) + '.png">이미지 저장</a></div><p class="small muted" style="margin-top:8px">휴대폰에서 저장이 안 되면 이미지를 길게 눌러 저장해 주세요.</p>';
       btn.textContent = '다시 만들기'; btn.disabled = false;
     }).catch(function () {
       $('#card-out').innerHTML = '<p class="small" style="color:var(--bad-ink);margin-top:10px">이 브라우저에서는 카드를 만들 수 없어요. 화면을 캡처해 주세요.</p>';
-      btn.textContent = '운명 카드 만들기'; btn.disabled = false;
+      btn.textContent = '크루 카드 만들기'; btn.disabled = false;
     });
   });
 
-  var copyText = '[진우주 운명 성격검사] ' + (b.name ? b.name + '님의' : '나의') + ' 운명 행성은 ' + EL[sen].h + '→' + (res.balanced ? '五' : EL[dom].h) + ' ' + t[0] + ' (★' + star.label + ')\n' + t[1] + '\n세부유형 ' + subCode + ' · 싱크로율 ' + res.sync + '%';
-  $('#copy-res').addEventListener('click', function () {
-    var done = function () { toast('결과 요약을 복사했어요'); };
-    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(copyText).then(done, function () { fallbackCopy(copyText); done(); });
-    else { fallbackCopy(copyText); done(); }
-  });
-  $('#retry').addEventListener('click', function () { state.answers = new Array(ITEMS.length).fill(null); state.idx = 0; show('s-birth'); });
+  var copyText = '[진우주 운명 성격검사] ' + (b.name ? b.name + '님의' : '나의') + ' 크루 유형은 ' + title + ' (' + formal + ')\n' + t[1] + (lite ? '' : '\n싱크로율 ' + res.sync + '% · ★' + star.label);
+  $('#copy-res').addEventListener('click', function () { copyOut(copyText, '결과 요약을 복사했어요'); });
+  if ($('#retry')) $('#retry').addEventListener('click', function () { state.answers = new Array(ITEMS.length).fill(null); state.idx = 0; show('s-birth'); });
+  if ($('#re-pick')) $('#re-pick').addEventListener('click', openPick);
+  if ($('#forget')) armForget($('#forget'), '한 번 더 누르면 지워져요', function () { $('.saved-note', root).textContent = '이 기기에서 지웠어요.'; });
 }
+
+/* ───────── 저장 (결과 유형만 · 이 기기 브라우저) ───────── */
+var LS = { profile: 'jinwooju.profile.v1', obs: 'jinwooju.obs.v1', crew: 'jinwooju.crew.v1' };
+function lsGet(k) { try { var v = window.localStorage.getItem(k); return v ? JSON.parse(v) : null; } catch (e) { return null; } }
+function lsSet(k, v) { try { window.localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } }
+function lsDel(k) { try { window.localStorage.removeItem(k); } catch (e) {} }
+function isIdx(x, n) { return x === (x | 0) && x >= 0 && x < n; }
+function getProfile() {
+  var p = lsGet(LS.profile);
+  if (!p || !isIdx(p.sen, 5) || !isIdx(p.dom, 5)) return null;
+  if (p.stem != null && !(isIdx(p.stem, 10) && Saju.STEM_EL[p.stem] === p.sen)) p.stem = null;
+  p.name = typeof p.name === 'string' ? p.name.slice(0, 20) : '';
+  return p;
+}
+function saveProfile(p) { p.t = Date.now(); state.profile = p; lsSet(LS.profile, p); }
+function saveProfileFromRes(res) {
+  saveProfile({ name: res.birth.name || '', sen: res.sen, dom: res.dom, balanced: !!res.balanced, stem: res.saju.dayStem, yy: res.yy, sync: res.sync, star: clarityOf(res).label, full: true });
+}
+function forgetAll() { lsDel(LS.profile); lsDel(LS.obs); lsDel(LS.crew); state.profile = null; }
+/* 지우기 버튼: 한 번 누르면 확인 문구, 두 번째에 지움 */
+function armForget(btn, confirmText, after) {
+  btn.addEventListener('click', function () {
+    if (btn.dataset.arm) { forgetAll(); toast('이 기기에서 지웠어요'); if (after) after(); }
+    else { btn.dataset.arm = '1'; btn.textContent = confirmText; }
+  });
+}
+function copyOut(txt, msg) {
+  var done = function () { toast(msg || '복사했어요'); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, function () { fallbackCopy(txt); done(); });
+  else { fallbackCopy(txt); done(); }
+}
+function goHomeOrIntro() { if (state.profile) renderHome(); else show('s-intro'); }
+
+/* ───────── 오늘 홈 (저장된 유형이 있으면 첫 화면) ───────── */
+function obsBadge(size) { return '<svg width="' + size + '" height="' + size + '" viewBox="-15 -15 30 30" aria-hidden="true" style="flex:none"><circle r="14" fill="#1E1D3A" stroke="#3A3870" stroke-width="1.5"/>' + star4(0, 0, 8, '#FFD27E') + star4(7, -7, 2.6, '#C8CEF7') + '</svg>'; }
+function renderHome() {
+  var p = state.profile; if (!p) { show('s-intro'); return; }
+  var res = liteRes(p), W = weatherOf(res), od = obsToday(), crew = getCrew(), ob = od ? obsResult(obsSet(), od.ans) : null, streak = obsStreak();
+  var title = typeTitle(p.sen, p.dom, p.balanced), line = p.balanced ? BAL_TYPE[1] : TYPES[p.sen][p.dom][1];
+  var cnt = [0, 0, 0, 0, 0]; crew.m.forEach(function (x) { cnt[x[2]]++; });
+  var h = '<div class="card hero reveal"><span class="hero-tag">' + (p.name ? esc(p.name) + '님의 오늘' : '오늘의 우주') + '</span>' + orbitSVG(res) +
+    '<div class="formal">' + formalHtml(p.sen, p.dom, p.balanced) + '</div><h1 class="type-name">' + title + '</h1><p class="type-sub">' + line + '</p>' +
+    '<div class="actions" style="margin-top:14px"><button class="btn soft" id="h-result">내 결과 보기</button><button class="btn soft" id="h-copy">내 유형 복사</button></div></div>';
+  h += weatherCard(W);
+  h += '<div class="home-grid">';
+  if (ob) {
+    var mm = OBS_MODE[ob.mode];
+    h += '<div class="card home-card"><div class="hc-h">' + roleBadge(ob.mode, 44) + '<div><h3>오늘은 ' + ROLE[ob.mode].name + ' 모드</h3><small>' + mm[0] + (streak > 1 ? ' · ' + streak + '일 연속 관측' : '') + '</small></div></div><p class="small" style="color:var(--ink-2)">오늘의 미션 · ' + mm[2] + '</p><button class="btn soft" id="h-obs">관측 결과 보기</button></div>';
+  } else {
+    h += '<div class="card home-card"><div class="hc-h">' + obsBadge(44) + '<div><h3>오늘의 관측</h3><small>10문항 · 1분' + (streak ? ' · ' + streak + '일째 관측 중' : '') + '</small></div></div><p class="small" style="color:var(--ink-2)">오늘의 나는 어떤 역할에 가까울까요? 날마다 새 문항이 열려요.</p><button class="btn pri" id="h-obs">관측 시작</button></div>';
+  }
+  h += '<div class="card home-card"><div class="hc-h">' + teacupFree(44) + '<div><h3>우리 크루</h3><small>' + (crew.m.length ? esc(crew.name || '이름 없는 크루') + ' · ' + crew.m.length + '명' : '아직 비어 있어요') + '</small></div></div>' +
+    (crew.m.length ? '<div class="mini-seats">' + ROLE.map(function (r, e) { return '<span>' + roleBadge(e, 18) + r.name + ' ' + cnt[e] + '</span>'; }).join('') + '</div>' : '<p class="small" style="color:var(--ink-2)">친구들 유형을 모아 최대 10명 크루를 짜 보세요. 빈자리와 케미가 보여요.</p>') +
+    '<button class="btn soft" id="h-crew">크루 구성표</button></div>';
+  h += '</div>';
+  h += '<div class="home-links"><button class="btn-link" id="h-test">50문항 검사 다시 하기</button><button class="btn-link" id="h-pick">유형 다시 고르기</button><button class="btn-link" id="h-forget">이 기기에서 지우기</button></div>';
+  $('#s-home').innerHTML = h;
+  $('#h-result').addEventListener('click', function () { var r = liteRes(state.profile); r.saved = true; renderResult(r); show('s-result'); });
+  $('#h-copy').addEventListener('click', function () { copyOut('[진우주 운명 성격검사] 나는 ' + title + ' · ' + typeFormal(p.sen, p.dom, p.balanced) + '\n' + line, '내 유형을 복사했어요'); });
+  $('#h-obs').addEventListener('click', function () { openObs(); });
+  $('#h-crew').addEventListener('click', function () { openCrew(); });
+  $('#h-test').addEventListener('click', function () { show('s-birth'); });
+  $('#h-pick').addEventListener('click', openPick);
+  armForget($('#h-forget'), '한 번 더 누르면 결과·관측·크루가 모두 지워져요', function () { show('s-intro'); });
+  show('s-home');
+}
+/* 홈의 크루 카드 아이콘: 다섯 역할이 둘러앉은 작은 원탁 */
+function teacupFree(size) {
+  var s = '<svg width="' + size + '" height="' + size + '" viewBox="-15 -15 30 30" aria-hidden="true" style="flex:none"><circle r="14" fill="#1E1D3A" stroke="#3A3870" stroke-width="1.5"/>';
+  for (var i = 0; i < 5; i++) { var a = -Math.PI / 2 + i * Math.PI * 2 / 5; s += '<circle cx="' + (8 * Math.cos(a)).toFixed(2) + '" cy="' + (8 * Math.sin(a)).toFixed(2) + '" r="3.4" fill="' + BODY[i] + '"/>'; }
+  return s + '</svg>';
+}
+
+/* ───────── 바로 보기 (검사 없이 유형 고르기) ───────── */
+var pickSel = { sen: null, dom: null, stem: null };
+function renderPick() {
+  $('#p-planets').innerHTML = EL.map(function (e, i) { return '<button type="button" class="pick" data-sen="' + i + '" aria-pressed="false">' + mascot(i, 44) + '<span>' + e.planet + '</span><small>' + e.h + ' · ' + e.trait + '</small></button>'; }).join('');
+  $('#p-roles').innerHTML = ROLE.map(function (r, i) { return '<button type="button" class="pick" data-dom="' + i + '" aria-pressed="false">' + roleBadge(i, 44) + '<span>' + r.name + '</span><small>' + r.verb + '</small></button>'; }).join('');
+  $$('#p-planets .pick').forEach(function (bt) { bt.addEventListener('click', function () { var s = +bt.dataset.sen; if (pickSel.sen !== s) pickSel.stem = null; pickSel.sen = s; $('#pick-err').textContent = ''; syncPick(); }); });
+  $$('#p-roles .pick').forEach(function (bt) { bt.addEventListener('click', function () { pickSel.dom = +bt.dataset.dom; $('#pick-err').textContent = ''; syncPick(); }); });
+}
+function syncPick() {
+  $$('#p-planets .pick').forEach(function (bt) { bt.setAttribute('aria-pressed', String(+bt.dataset.sen === pickSel.sen)); });
+  $$('#p-roles .pick').forEach(function (bt) { bt.setAttribute('aria-pressed', String(+bt.dataset.dom === pickSel.dom)); });
+}
+function openPick() {
+  var p = state.profile;
+  pickSel = p ? { sen: p.sen, dom: p.balanced ? null : p.dom, stem: p.stem != null ? p.stem : null } : { sen: null, dom: null, stem: null };
+  $('#p-name').value = p && p.name ? p.name : '';
+  $('#pick-err').textContent = ''; $('#p-found').textContent = '';
+  syncPick(); show('s-pick');
+}
+function pickFind() {
+  var d = $('#p-date').value, m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d);
+  if (!m) { $('#p-found').textContent = '생년월일을 입력해 주세요.'; return; }
+  var y = +m[1], mo = +m[2], dd = +m[3], dt = new Date(y, mo - 1, dd);
+  if (dt.getFullYear() !== y || dt.getMonth() !== mo - 1 || dt.getDate() !== dd || y < 1900 || d > todayStr()) { $('#p-found').textContent = '1900년 이후, 오늘까지의 날짜를 넣어 주세요.'; return; }
+  var late = $('#p-late').checked, sj = Saju.calc({ year: y, month: mo, day: dd, hour: late ? 23 : 12, minute: late ? 50 : 0, timeKnown: late, longitude: 126.98 });
+  pickSel.stem = sj.dayStem; pickSel.sen = sj.dayElement; syncPick(); $('#pick-err').textContent = '';
+  $('#p-found').innerHTML = '일간 ' + Saju.STEMS[sj.dayStem] + '(' + Saju.STEMS_KO[sj.dayStem] + ') → <b>' + EL[sj.dayElement].planet + '</b> 출신이에요.';
+}
+function pickGo() {
+  if (pickSel.sen == null) { $('#pick-err').textContent = '출신 행성을 골라 주세요. 모르면 생일로 찾을 수 있어요.'; return; }
+  if (pickSel.dom == null) { $('#pick-err').textContent = '크루 역할을 골라 주세요.'; return; }
+  var old = state.profile, keep = old && old.full && !old.balanced && old.sen === pickSel.sen && old.dom === pickSel.dom;
+  var p = keep ? old : { sen: pickSel.sen, dom: pickSel.dom, stem: pickSel.stem != null && Saju.STEM_EL[pickSel.stem] === pickSel.sen ? pickSel.stem : null, balanced: false, full: false };
+  p.name = $('#p-name').value.trim().slice(0, 20);
+  saveProfile(p); state.sample = false;
+  var res = liteRes(p); res.saved = true; renderResult(res); show('s-result');
+}
+
+/* ───────── 오늘의 관측 ─────────
+   날마다 10문항: 역할 조합 10쌍(FC_PAIRS)마다 한 문항씩 골라서, 역할마다 정확히 4번 나와요.
+   서버가 없으니 문항은 날짜로 정해지고, 기록은 이 기기에만 남아요.
+   OBS[k] = FC_PAIRS[k] 쌍의 문항들: [상황, 앞 역할다운 선택, 뒤 역할다운 선택] */
+var OBS = [
+  [['친구 생일 파티를 준비한다면?', '주인공이 좋아할 걸 몰래 알아본다', '사람을 모아서 판을 크게 벌인다'],
+   ['회의가 조용해졌을 때 나는?', '말 못 한 사람에게 슬쩍 의견을 묻는다', '아무 말이나 먼저 던져 분위기를 연다'],
+   ['처음 간 모임에서 나는?', '혼자 있는 사람 옆에 가서 앉는다', '가운데 앉아 대화를 이끈다'],
+   ['단톡방에 친구의 좋은 소식이 올라오면?', '개인톡으로 따로 축하를 보낸다', '당장 축하 번개를 제안한다'],
+   ['팀에 새로운 사람이 왔다면?', '필요한 게 없는지 조용히 챙긴다', '점심 같이 먹자고 판을 깐다'],
+   ['친구가 기분이 안 좋아 보이면?', '말없이 옆에서 들어준다', '기분 전환하러 밖으로 끌고 나간다']],
+  [['팀 과제 발표 전날 나는?', '누가 뭘 했는지 공정하게 이름을 넣는다', '발표 순서와 시간을 분 단위로 맞춘다'],
+   ['여행 경비를 정리할 때 나는?', '1원 단위까지 투명하게 공개한다', '예산표를 미리 짜서 넘지 않게 관리한다'],
+   ['내 실수를 발견했다면?', '바로 솔직하게 말한다', '다시 안 생기게 체크리스트를 만든다'],
+   ['새 목표를 세울 때 나는?', '지킬 수 있는 만큼만 정직하게 쓴다', '월별 계획까지 쪼개서 적는다'],
+   ['칭찬을 받았을 때 나는?', '같이 한 사람들 덕이라고 말한다', '다음엔 더 잘하려고 개선점을 메모한다'],
+   ['중고거래 글을 올린다면?', '작은 흠집까지 사진으로 올린다', '거래 시간과 장소를 딱 정해 둔다']],
+  [['주말에 시간이 생기면?', '안 가 본 동네를 무작정 걸어 본다', '요즘 연락 못 한 친구에게 안부를 묻는다'],
+   ['친구가 고민을 털어놓으면?', '완전히 다른 관점의 해결책을 던진다', '그 마음이 어땠는지부터 물어본다'],
+   ['새 카페에 가면?', '처음 보는 메뉴를 시킨다', '같이 온 사람 입맛에 맞을 메뉴를 추천한다'],
+   ['선물을 고를 때 나는?', '세상에 하나뿐인 특이한 걸 찾는다', '상대가 요즘 필요하던 걸 떠올린다'],
+   ['모임 장소를 정할 때 나는?', '새로 생긴 곳에 가 보자고 한다', '다리 아픈 사람도 편한 곳을 고른다'],
+   ['잠들기 전 떠오르는 생각은?', '‘우주에 끝이 있다면…’ 같은 상상', '‘오늘 그 말에 서운했을까?’ 하는 걱정']],
+  [['팀 의견이 둘로 갈리면?', '빠르게 결론 내고 밀고 나간다', '양쪽 의견을 공정하게 따져 본다'],
+   ['내가 한 일이 잘 풀리면?', '모두에게 신나게 알린다', '함께한 사람들 덕으로 돌린다'],
+   ['게임 룰이 애매할 때 나는?', '재밌는 쪽으로 즉석 룰을 만든다', '원래 룰을 찾아보고 그대로 한다'],
+   ['회식 자리에서 나는?', '건배사를 자처한다', '계산이 공평하게 나뉘는지 챙긴다'],
+   ['친구가 과장된 무용담을 늘어놓으면?', '더 크게 맞장구치며 판을 키운다', '실제로는 어땠는지 궁금해진다'],
+   ['처음 보는 사람에게 나를 소개할 때?', '재밌는 에피소드로 세게 시작한다', '담백하게 있는 그대로 말한다']],
+  [['여행 첫날 아침에 나는?', '짜 둔 일정표대로 움직인다', '눈에 띄는 골목으로 일단 들어간다'],
+   ['새 프로젝트를 시작할 때?', '할 일 목록부터 만든다', '참신한 아이디어부터 떠올린다'],
+   ['요리를 할 때 나는?', '레시피 계량을 정확히 따른다', '냉장고 재료로 새 조합을 실험한다'],
+   ['배우고 싶은 게 생기면?', '하루 30분씩 꾸준히 할 계획을 세운다', '관련된 것까지 한꺼번에 파고든다'],
+   ['지금 내 책상은?', '필요한 것만 제자리에', '읽다 만 책과 메모가 여기저기'],
+   ['길을 잃었을 때 나는?', '지도를 켜고 가장 빠른 길을 찾는다', '이왕 이렇게 된 거 구경하며 걷는다']],
+  [['친구가 약속에 30분 늦으면?', '무슨 일 있었는지부터 걱정한다', '다음엔 미리 말해 달라고 분명히 한다'],
+   ['후배가 실수를 숨기려 하면?', '혼나지 않게 같이 수습해 준다', '솔직하게 말하는 게 낫다고 설득한다'],
+   ['맛없는 음식을 대접받으면?', '맛있다며 잘 먹는다', '정중하게 솔직한 감상을 말한다'],
+   ['새치기하는 사람을 보면?', '급한 사정이 있나 보다 하고 넘긴다', '줄이 있다고 알려 준다'],
+   ['친구 연애 상담을 해 줄 때?', '일단 친구 편을 들어 준다', '상대 입장도 공정하게 짚어 준다'],
+   ['단체 사진을 올릴 때 나는?', '모두가 잘 나온 사진을 고른다', '보정 없이 있는 그대로 올린다']],
+  [['주말 약속을 잡을 때 나는?', '당일 번개로 모은다', '2주 전에 날짜를 확정한다'],
+   ['발표를 앞두고 나는?', '현장 분위기 보고 애드리브로 간다', '대본을 쓰고 리허설을 한다'],
+   ['여행 멤버를 모을 때 나는?', '일단 ‘가자!’부터 외친다', '예산과 일정부터 정리해 공유한다'],
+   ['월급날 나는?', '오늘은 내가 쏜다며 모임을 연다', '적금부터 넣고 가계부를 쓴다'],
+   ['팀 프로젝트에서 내 자리는?', '분위기를 띄우고 사람을 움직이는 자리', '마감과 진행 상황을 챙기는 자리'],
+   ['운동을 시작한다면?', '친구들을 모아 같이 한다', '루틴표를 만들어 매일 체크한다']],
+  [['새 규칙이 생기면 나는?', '일단 지키고, 필요하면 건의한다', '왜 이런 규칙인지부터 궁금하다'],
+   ['보드게임에서 더 재밌는 건?', '규칙대로 정확하게 하는 것', '새 전략을 실험해 보는 것'],
+   ['모르는 걸 질문받으면?', '모른다고 솔직하게 말한다', '그럴듯한 가설을 세워 본다'],
+   ['모두가 같은 의견일 때 나는?', '합의된 걸 존중한다', '반대 의견을 일부러 떠올려 본다'],
+   ['처음 보는 음식을 권하면?', '무슨 재료인지부터 확인한다', '일단 한 입 먹어 본다'],
+   ['영화를 고를 때 나는?', '평이 믿을 만한 걸 고른다', '아무도 모르는 독특한 걸 고른다']],
+  [['마감 직전에 동료가 도움을 청하면?', '내 일부터 끝내고 돕는다', '일단 동료부터 돕는다'],
+   ['가족 여행을 준비할 때 나는?', '동선과 예약을 완벽하게 짠다', '부모님이 편하실지를 먼저 생각한다'],
+   ['룸메이트가 설거지를 안 했다면?', '당번표를 만든다', '이번엔 그냥 내가 한다'],
+   ['친구 부탁이 내 일정과 겹치면?', '일정을 지키고 다른 날을 제안한다', '일정을 바꿔서라도 들어준다'],
+   ['팀원이 계속 늦는다면?', '진행표에 기한을 다시 못 박는다', '요즘 무슨 일 있는지 물어본다'],
+   ['하루를 마무리할 때 나는?', '내일 할 일을 정리한다', '고마웠던 사람에게 메시지를 보낸다']],
+  [['파티를 연다면 나는?', '아무도 안 해 본 기발한 컨셉을 짠다', '사회를 보며 분위기를 띄운다'],
+   ['SNS에 올리고 싶은 건?', '요즘 꽂힌 신기한 지식', '친구들과 신나게 논 사진'],
+   ['여행지의 저녁, 나는?', '현지인만 가는 숨은 가게를 찾아간다', '새로 사귄 사람들과 어울려 논다'],
+   ['회의에서 나는?', '아무도 생각 못 한 아이디어를 낸다', '아이디어가 나오게 분위기를 띄운다'],
+   ['혼자만의 시간이 생기면?', '새 취미를 파고든다', '만날 사람 없나 연락을 돌린다'],
+   ['좋아하는 가수 공연에서 나는?', '편곡이 어떻게 바뀌었는지 귀 기울인다', '떼창하며 제일 크게 소리 지른다']]
+];
+var OBS_MODE = [
+  ['마음 레이더가 켜진 날', '주변 사람 기분이 유난히 잘 보이는 날이에요. 오늘은 챙기는 힘이 곧 실력.', '한 사람에게 ‘고마워’를 구체적으로 말해 보기'],
+  ['추진 엔진 풀가동', '사람을 만나고 판을 벌일수록 일이 풀리는 날이에요.', '미뤄 둔 연락 하나 먼저 보내기'],
+  ['중심 잡는 날', '공정하고 솔직한 말이 힘을 얻는 날이에요.', '애매하게 넘긴 일 하나 분명히 정리하기'],
+  ['항로가 또렷한 날', '계획하고 마무리하는 힘이 좋은 날이에요.', '내일 할 일 딱 3개만 적고 자기'],
+  ['호기심 풀충전', '새로운 게 자꾸 눈에 들어오는 날이에요.', '안 가 본 길로 한 번 돌아가 보기']
+];
+function dateKey(d) { d = d || new Date(); return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()); }
+function seeded(seed) { var s = (seed >>> 0) || 1; return function () { s ^= s << 13; s >>>= 0; s ^= s >>> 17; s ^= s << 5; s >>>= 0; return s / 4294967296; }; }
+function obsSet(d) {
+  d = d || new Date();
+  var day = Saju.jdn(d.getFullYear(), d.getMonth() + 1, d.getDate()), rnd = seeded((day * 2654435761) % 4294967296 + 12345);
+  for (var w = 0; w < 3; w++) rnd();
+  var qs = FC_PAIRS.map(function (p, k) {
+    var it = OBS[k][Math.floor(rnd() * OBS[k].length)], swap = rnd() < 0.5;
+    return { k: k, sit: it[0], a: swap ? p[1] : p[0], b: swap ? p[0] : p[1], ta: swap ? it[2] : it[1], tb: swap ? it[1] : it[2] };
+  });
+  for (var i = qs.length - 1; i > 0; i--) { var j = Math.floor(rnd() * (i + 1)), tmp = qs[i]; qs[i] = qs[j]; qs[j] = tmp; }
+  return qs;
+}
+/* 가장 많이 고른 역할이 오늘의 모드. 동점이면 동점끼리 맞붙은 문항에서 고른 쪽 */
+function obsResult(qs, ans) {
+  var c = [0, 0, 0, 0, 0];
+  qs.forEach(function (q, i) { if (ans[i] === 'a') c[q.a]++; else if (ans[i] === 'b') c[q.b]++; });
+  var max = Math.max.apply(null, c), top = [0, 1, 2, 3, 4].filter(function (e) { return c[e] === max; }), wins = {};
+  top.forEach(function (e) { wins[e] = 0; });
+  qs.forEach(function (q, i) { if (top.indexOf(q.a) >= 0 && top.indexOf(q.b) >= 0 && ans[i]) wins[ans[i] === 'a' ? q.a : q.b]++; });
+  // 맞대결도 같으면 응답 모양과 날짜로 순서를 돌려서, 특정 역할이 늘 이기지 않게 해요
+  var rot = qs.length ? qs[0].k : 0; ans.forEach(function (x, i) { if (x === 'a') rot += i + 1; }); rot %= 5;
+  var mode = top.slice().sort(function (x, y) { return wins[y] - wins[x] || (x - rot + 5) % 5 - (y - rot + 5) % 5; })[0];
+  return { counts: c, mode: mode, tie: top.length > 1 };
+}
+function obsStore() { var o = lsGet(LS.obs); return o && o.days && typeof o.days === 'object' ? o : { days: {} }; }
+function obsToday() { var r = obsStore().days[dateKey()]; return r && Array.isArray(r.ans) && r.ans.length === 10 ? r : null; }
+function obsSave(ans, mode) {
+  var o = obsStore(); o.days[dateKey()] = { ans: ans, mode: mode };
+  var keys = Object.keys(o.days).sort(); while (keys.length > 60) delete o.days[keys.shift()];
+  lsSet(LS.obs, o);
+}
+function obsRecent(n) {
+  var o = obsStore(), d = new Date(), out = [];
+  for (var i = n - 1; i >= 0; i--) { var dd = new Date(d.getFullYear(), d.getMonth(), d.getDate() - i), r = o.days[dateKey(dd)]; out.push({ k: dateKey(dd), d: dd, mode: r && isIdx(r.mode, 5) ? r.mode : null }); }
+  return out;
+}
+function obsStreak() {
+  var o = obsStore(), d = new Date(), n = 0, i = o.days[dateKey(d)] ? 0 : 1;
+  for (; i < 400; i++) { if (o.days[dateKey(new Date(d.getFullYear(), d.getMonth(), d.getDate() - i))]) n++; else break; }
+  return n;
+}
+var obsRun = { qs: null, ans: [], idx: 0 }, obsBusy = false;
+function openObs(restart) {
+  obsRun.qs = obsSet();
+  var done = obsToday();
+  if (done && !restart) renderObsResult(done.ans);
+  else { obsRun.ans = []; obsRun.idx = 0; renderObsQ(); }
+  show('s-obs');
+}
+function renderObsQ() {
+  var q = obsRun.qs[obsRun.idx], n = obsRun.qs.length, prog = obsRun.idx / n * 100, a = obsRun.ans[obsRun.idx];
+  $('#s-obs').innerHTML = '<div class="q-top"><button class="icon-btn" id="o-back" aria-label="' + (obsRun.idx ? '이전 문항' : '나가기') + '">←</button><div class="track" aria-hidden="true"><div class="fill" style="width:' + prog + '%"></div><div class="rider" style="left:' + prog + '%">' + obsBadge(26) + '</div></div><div class="q-count">' + (obsRun.idx + 1) + '/' + n + '</div></div>' +
+    '<div class="card q-card is-fc obs-card"><span class="q-chip">오늘의 관측 · ' + pad2(obsRun.idx + 1) + '</span><p class="q-text" aria-live="polite">' + esc(q.sit) + '</p>' +
+    '<div class="fc-pair"><button class="fc-card a' + (a === 'a' ? ' lean' : '') + '" id="o-a"><span class="fc-tag">A</span><span class="fc-t">' + esc(q.ta) + '</span></button>' +
+    '<button class="fc-card b' + (a === 'b' ? ' lean' : '') + '" id="o-b"><span class="fc-tag">B</span><span class="fc-t">' + esc(q.tb) + '</span></button></div>' +
+    '<p class="muted small">둘 다 좋아요. 오늘의 나에 더 가까운 쪽을 골라 주세요.</p></div>';
+  $('#o-a').addEventListener('click', function () { obsAnswer('a'); });
+  $('#o-b').addEventListener('click', function () { obsAnswer('b'); });
+  $('#o-back').addEventListener('click', obsBack);
+}
+function obsBack() { if (obsBusy) return; if (obsRun.idx > 0) { obsRun.idx--; renderObsQ(); } else goHomeOrIntro(); }
+function obsAnswer(v) {
+  if (obsBusy || !obsRun.qs) return;
+  obsBusy = true; obsRun.ans[obsRun.idx] = v;
+  $('#o-a').classList.toggle('lean', v === 'a'); $('#o-b').classList.toggle('lean', v === 'b');
+  setTimeout(function () {
+    obsBusy = false;
+    if ($('#s-obs').hidden) return;
+    if (obsRun.idx < obsRun.qs.length - 1) { obsRun.idx++; renderObsQ(); }
+    else { var r = obsResult(obsRun.qs, obsRun.ans); obsSave(obsRun.ans.slice(), r.mode); renderObsResult(obsRun.ans); window.scrollTo(0, 0); }
+  }, REDUCED ? 60 : 200);
+}
+function renderObsResult(ans) {
+  var qs = obsRun.qs, r = obsResult(qs, ans), m = r.mode, md = OBS_MODE[m], p = state.profile, now = new Date();
+  var cmp = !p ? '' : p.balanced ? '평소엔 만능 크루원인데, 오늘은 ' + ROLE[m].name + ' 쪽으로 기울었어요.'
+    : p.dom === m ? '평소 역할 그대로예요. 오늘도 ' + ROLE[m].name + '답게!'
+    : '평소엔 ' + ROLE[p.dom].name + '인데 오늘은 ' + ROLE[m].name + ' 모드예요. ' + ROLE[m].name + '의 힘을 빌려 쓰는 날.';
+  var recent = obsRecent(7), streak = obsStreak(), today = dateKey();
+  var h = '<div class="card hero reveal"><span class="hero-tag">' + (now.getMonth() + 1) + '월 ' + now.getDate() + '일 관측 결과</span><div class="obs-big float">' + roleBadge(m, 96) + '</div>' +
+    '<p class="muted">오늘의 나는</p><h1 class="type-name">' + ROLE[m].name + ' 모드</h1><p class="type-sub">' + md[0] + (r.tie ? ' · 박빙 승부' : '') + '</p><div class="bubble">' + md[1] + '</div>' + (cmp ? '<p class="summary">' + cmp + '</p>' : '') + '</div>';
+  h += '<div class="card"><h2 class="sec-h">오늘 고른 쪽</h2><p class="muted small">역할마다 4번씩 나왔어요.</p><div class="bars">' +
+    ROLE.map(function (rr, e) { return '<div class="bar-row"><div class="lab">' + roleBadge(e, 22) + rr.name + '</div>' + bar(r.counts[e] / 4 * 100, DEEP[e]) + '<div class="val">' + r.counts[e] + '<span class="lv">/4</span></div></div>'; }).join('') + '</div>' +
+    '<div class="box mission"><h4>오늘의 미션</h4><p class="para" style="margin:0">' + md[2] + '</p></div></div>';
+  h += '<div class="card"><h2 class="sec-h">최근 7일 관측</h2><div class="week">' + recent.map(function (x) {
+    return '<div class="day' + (x.k === today ? ' today' : '') + '">' + (x.mode != null ? roleBadge(x.mode, 30) : '<span class="nodata"></span>') + '<small>' + '일월화수목금토'.charAt(x.d.getDay()) + '</small></div>'; }).join('') + '</div>' +
+    '<p class="small muted" style="margin-top:8px">' + (streak > 1 ? streak + '일 연속 관측 중이에요. ' : '') + '내일은 새 문항 10개가 열려요. 기록은 이 기기에만 남아요.</p></div>';
+  h += '<div class="actions"><button class="btn pri" id="o-home">' + (p ? '홈으로' : '처음으로') + '</button><button class="btn soft" id="o-copy">결과 복사</button><button class="btn-link" id="o-again">오늘 관측 다시 하기</button></div>';
+  $('#s-obs').innerHTML = h;
+  $('#o-home').addEventListener('click', goHomeOrIntro);
+  $('#o-copy').addEventListener('click', function () { copyOut('[진우주 오늘의 관측] ' + (now.getMonth() + 1) + '월 ' + now.getDate() + '일, 오늘의 나는 ' + ROLE[m].name + ' 모드 · ' + md[0] + '\n오늘의 미션: ' + md[2], '관측 결과를 복사했어요'); });
+  $('#o-again').addEventListener('click', function () { openObs(true); });
+}
+
+/* ───────── 우리 크루 (최대 10명) ───────── */
+var CREW_MAX = 10;
+var CREW_NAME = [
+  ['다정한 온실호', '서로 챙기다 하루가 다 가요. 이 크루에서 서운한 사람은 없어요.'],
+  ['시끌벅적 축제호', '판은 누구보다 잘 벌여요. 문제는 선장이 여럿이라 방향도 여러 개라는 것.'],
+  ['든든한 관제탑호', '규칙과 신뢰로 굴러가요. 정산이 1원도 안 틀리는 크루.'],
+  ['정시 출발 급행호', '계획대로 정확히 도착해요. 일정표 버전이 여러 개일 수는 있어요.'],
+  ['어디로 튈지 모를 탐사호', '아이디어가 넘쳐요. 출발은 했는데 목적지가 매번 바뀌어요.']
+];
+var CREW_MISSING = [
+  '정원사가 없어요. 서로의 기분을 챙길 사람이 없으니, 가끔은 ‘괜찮아?’ 한마디를.',
+  '선장이 없어요. 먼저 ‘가자!’를 외칠 사람이 없어서 약속이 자꾸 미뤄질 수 있어요.',
+  '관제사가 없어요. 공정하게 정리할 사람이 없으니 정산은 앱에 맡기세요.',
+  '항해사가 없어요. 여행 가면 숙소부터 못 잡을지도 몰라요.',
+  '탐험가가 없어요. 새로운 걸 들고 올 사람이 없어서 늘 가던 곳만 가게 돼요.'
+];
+var CREW_JOB = [['힘든 사람 챙기기', 0], ['모임 소집', 1], ['정산·총무', 2], ['여행 일정 짜기', 3], ['맛집·놀거리 발굴', 4]];
+function cleanCrew(c) {
+  if (!c || !Array.isArray(c.m)) return null;
+  var m = c.m.filter(function (x) { return Array.isArray(x) && typeof x[0] === 'string' && x[0].trim() && isIdx(x[1], 5) && isIdx(x[2], 5); })
+    .slice(0, CREW_MAX).map(function (x) { return [x[0].trim().slice(0, 10), x[1], x[2]]; });
+  return { name: typeof c.name === 'string' ? c.name.slice(0, 16) : '', m: m };
+}
+function getCrew() { return cleanCrew(lsGet(LS.crew)) || { name: '', m: [] }; }
+function crewLink(c) { return location.href.split('#')[0] + '#crew=' + encodeURIComponent(JSON.stringify({ n: c.name, m: c.m })); }
+function crewFromHash() {
+  var h = location.hash; if (h.indexOf('#crew=') !== 0) return null;
+  try { var o = JSON.parse(decodeURIComponent(h.slice(6))), c = cleanCrew({ name: o.n, m: o.m }); return c && c.m.length ? c : null; } catch (e) { return null; }
+}
+function clearHash() { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} }
+function duoText(a, b) {
+  var ro = Saju.relation(a[2], b[2]);
+  if (ro === 'bi') return '둘 다 ' + ROLE[a[2]].name + '. 말 안 해도 통하지만 같은 데서 막혀요.';
+  if (ro === 'sik') return SHENG[a[2]] + '.';
+  if (ro === 'in') return SHENG[b[2]] + '.';
+  if (ro === 'jae') return KE[a[2]] + '.';
+  return KE[b[2]] + '.';
+}
+function crewSummary(c) {
+  var m = c.m, cnt = [0, 0, 0, 0, 0], by = [[], [], [], [], []];
+  m.forEach(function (x) { cnt[x[2]]++; by[x[2]].push(x[0]); });
+  var missing = [0, 1, 2, 3, 4].filter(function (e) { return !cnt[e]; });
+  var max = Math.max.apply(null, cnt), majors = [0, 1, 2, 3, 4].filter(function (e) { return cnt[e] === max; }), title, desc;
+  if (!missing.length) { title = '다섯 자리가 다 찬 완벽한 우주선'; desc = '키우고, 벌이고, 지키고, 짜고, 찾아오는 역할이 모두 있어요. 어디로든 떠날 수 있는 크루예요.'; }
+  else if (majors.length === 1 && max >= 2) { title = CREW_NAME[majors[0]][0]; desc = CREW_NAME[majors[0]][1]; }
+  else { title = '골고루 섞인 연합 우주선'; desc = '한쪽으로 쏠리지 않아서 서로의 빈틈을 메워 줘요.'; }
+  var pairs = [];
+  for (var i = 0; i < m.length; i++) for (var j = i + 1; j < m.length; j++) pairs.push({ a: m[i], b: m[j], cp: compatOf({ sen: m[i][1], dom: m[i][2] }, { sen: m[j][1], dom: m[j][2] }) });
+  var avg = pairs.length ? Math.round(mean(pairs.map(function (x) { return x.cp.score; }))) : 0;
+  var tier = TIERS.filter(function (t) { return avg >= t[0]; })[0];
+  pairs.sort(function (x, y) { return y.cp.score - x.cp.score; });
+  var jobs = CREW_JOB.map(function (jb) {
+    var e = jb[1], g = (e + 4) % 5;
+    return { job: jb[0], e: e, who: by[e].length ? by[e].map(esc).join(', ') : by[g].length ? esc(by[g][0]) + ' <span class="muted small">(대타 · ' + ROLE[g].name + ')</span>' : '<span class="muted">먼저 손 드는 사람</span>' };
+  });
+  return { cnt: cnt, by: by, missing: missing, title: title, desc: desc, pairs: pairs, avg: avg, tier: tier, jobs: jobs };
+}
+function crewAnalysisHtml(c) {
+  var s = crewSummary(c), best = s.pairs[0], worst = s.pairs[s.pairs.length - 1];
+  var duo = function (x, label) { return '<div class="duo"><div class="duo-b">' + roleBadge(x.a[2], 30) + roleBadge(x.b[2], 30) + '</div><div><div class="who">' + label + ' · ' + esc(x.a[0]) + ' × ' + esc(x.b[0]) + '</div><p>' + duoText(x.a, x.b) + '</p></div><em style="color:' + x.cp.color + '">' + x.cp.score + '</em></div>'; };
+  var h = '<div class="card hero reveal"><span class="hero-tag">' + (c.name ? esc(c.name) : '우리 크루') + ' · ' + c.m.length + '명</span>' +
+    '<h2 class="crew-title">' + s.title + '</h2><p class="summary">' + s.desc + '</p>' +
+    '<div class="seats">' + ROLE.map(function (r, e) { return '<div class="seat' + (s.cnt[e] ? '' : ' empty') + '">' + roleBadge(e, 34) + '<b>' + r.name + '</b><span class="cnt">' + (s.cnt[e] ? s.cnt[e] + '명' : '빈자리') + '</span><small>' + (s.cnt[e] ? s.by[e].map(esc).join(', ') : '&nbsp;') + '</small></div>'; }).join('') + '</div>' +
+    '<div class="crew-chem"><div class="meter">' + ring(s.avg, 92, s.tier[3]) + '<b class="disp">' + s.avg + '</b></div><div><div class="muted small">크루 평균 케미</div><h4 style="color:' + s.tier[3] + '">' + s.tier[1] + '</h4><p>' + s.tier[2] + '</p></div></div></div>';
+  h += '<div class="card"><h2 class="sec-h">케미 듀오</h2>' + duo(best, s.pairs.length === 1 ? '두 사람' : '최고의 듀오') + (s.pairs.length > 1 && worst.cp.score < best.cp.score ? duo(worst, '조심 듀오') : '') + '</div>';
+  h += '<div class="card"><h2 class="sec-h">역할 분담 추천</h2><ul class="jobs">' + s.jobs.map(function (j) { return '<li><span class="jb">' + j.job + '</span>' + roleBadge(j.e, 22) + '<span>' + j.who + '</span></li>'; }).join('') + '</ul>' +
+    (s.missing.length ? '<h3 class="sec-h" style="margin-top:16px;font-size:16px">빈자리 경보</h3><ul class="miss">' + s.missing.map(function (e) { return '<li>' + roleBadge(e, 24) + '<span>' + CREW_MISSING[e] + '</span></li>'; }).join('') + '</ul>' : '') + '</div>';
+  return h;
+}
+function crewText(c) {
+  var s = crewSummary(c);
+  return '[진우주 우리 크루] ' + (c.name || '우리 크루') + ' · ' + c.m.length + '명\n' + s.title + '\n' +
+    ROLE.map(function (r, e) { return r.name + ': ' + (s.by[e].length ? s.by[e].join(', ') : '빈자리'); }).join(' / ') + '\n크루 평균 케미 ' + s.avg + '점 · ' + s.tier[1];
+}
+var crewView = { c: null, shared: false };
+function openCrew(shared) { crewView.shared = !!shared; crewView.c = shared || getCrew(); renderCrew(); show('s-crew'); }
+function crewCommit() { lsSet(LS.crew, crewView.c); if (crewView.shared) { crewView.shared = false; toast('내 크루로 저장했어요'); } }
+function renderCrew() {
+  var c = crewView.c, m = c.m, n = m.length, p = state.profile, meName = p ? (p.name || '나') : null;
+  var hasMe = p && m.some(function (x) { return x[0] === meName.slice(0, 10) && x[1] === p.sen && x[2] === p.dom; });
+  var full = n >= CREW_MAX;
+  var h = '<div class="card"><h2 class="sec-h">우리 크루 구성표</h2><p class="muted small">친구들의 출신 행성과 역할을 모아 우주선을 꾸려 보세요. 최대 ' + CREW_MAX + '명까지 태울 수 있어요.</p>';
+  if (crewView.shared) h += '<p class="note">공유받은 크루예요. 고치거나 <button class="btn-link inline" id="cr-keep">내 크루로 저장</button>하면 이 기기에 남아요.</p>';
+  h += '<div class="field"><label for="cr-name">크루 이름 <span class="muted">(선택)</span></label><input type="text" id="cr-name" maxlength="16" placeholder="예: 3반 우주선" value="' + esc(c.name) + '"></div>';
+  h += '<div class="crew-add"><input type="text" id="cr-mname" maxlength="10" placeholder="크루원 이름" aria-label="크루원 이름"' + (full ? ' disabled' : '') + '>' +
+    '<select id="cr-sen" aria-label="출신 행성"' + (full ? ' disabled' : '') + '><option value="">출신 행성</option>' + EL.map(function (e, i) { return '<option value="' + i + '">' + e.planet + '</option>'; }).join('') + '</select>' +
+    '<select id="cr-dom" aria-label="역할"' + (full ? ' disabled' : '') + '><option value="">역할</option>' + ROLE.map(function (r, i) { return '<option value="' + i + '">' + r.name + '</option>'; }).join('') + '</select>' +
+    '<button class="btn pri sm" id="cr-add"' + (full ? ' disabled' : '') + '>태우기</button></div>';
+  h += '<p class="err" id="cr-err" role="alert"></p><div class="crew-meta"><span class="muted small">' + n + ' / ' + CREW_MAX + '명' + (full ? ' · 자리가 다 찼어요' : '') + '</span>' + (p && !hasMe && !full ? '<button class="btn-link" id="cr-me">나도 태우기</button>' : '') + '</div>';
+  if (n) h += '<ul class="members">' + m.map(function (x, i) { return '<li>' + mascot(x[1], 30) + '<span class="mn"><b>' + esc(x[0]) + '</b><small>' + typeTitle(x[1], x[2]) + ' · ' + EL[x[1]].planet + ' 출신</small></span>' + roleBadge(x[2], 28) + '<button class="icon-btn sm" data-del="' + i + '" aria-label="' + esc(x[0]) + ' 내리기">×</button></li>'; }).join('') + '</ul>';
+  h += '</div>';
+  h += n >= 2 ? crewAnalysisHtml(c) : '<div class="card"><p class="muted" style="text-align:center">두 명 이상 태우면 크루 분석이 열려요.</p></div>';
+  h += '<div class="actions"><button class="btn pri" id="cr-link"' + (n ? '' : ' disabled') + '>크루 링크 복사</button><button class="btn soft" id="cr-text"' + (n >= 2 ? '' : ' disabled') + '>구성표 글로 복사</button><button class="btn soft" id="cr-back">' + (p ? '홈으로' : '처음으로') + '</button></div>';
+  h += '<p class="saved-note">크루 구성표는 이 기기에만 저장돼요. 링크를 보내면 친구도 같은 구성표를 볼 수 있어요.</p>';
+  $('#s-crew').innerHTML = h;
+
+  function add(name, sen, dom) {
+    var err = $('#cr-err');
+    if (c.m.length >= CREW_MAX) { err.textContent = '크루는 최대 ' + CREW_MAX + '명이에요.'; return false; }
+    if (!name) { err.textContent = '크루원 이름을 적어 주세요.'; return false; }
+    if (sen === '' || dom === '') { err.textContent = '출신 행성과 역할을 골라 주세요.'; return false; }
+    if (c.m.some(function (x) { return x[0] === name; })) { err.textContent = '이미 탄 이름이에요. 구분되게 바꿔 주세요.'; return false; }
+    c.m.push([name.slice(0, 10), +sen, +dom]); crewCommit(); renderCrew(); return true;
+  }
+  $('#cr-add').addEventListener('click', function () { add($('#cr-mname').value.trim(), $('#cr-sen').value, $('#cr-dom').value); if ($('#cr-mname')) $('#cr-mname').focus(); });
+  $('#cr-mname').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); $('#cr-add').click(); } });
+  if ($('#cr-me')) $('#cr-me').addEventListener('click', function () { add(meName.slice(0, 10), String(p.sen), String(p.dom)); });
+  if ($('#cr-keep')) $('#cr-keep').addEventListener('click', function () { crewCommit(); renderCrew(); });
+  $('#cr-name').addEventListener('change', function () { c.name = this.value.trim().slice(0, 16); crewCommit(); renderCrew(); });
+  $$('[data-del]', $('#s-crew')).forEach(function (bt) { bt.addEventListener('click', function () { c.m.splice(+bt.dataset.del, 1); crewCommit(); renderCrew(); }); });
+  $('#cr-link').addEventListener('click', function () { copyOut(crewLink(c), '크루 링크를 복사했어요'); });
+  $('#cr-text').addEventListener('click', function () { copyOut(crewText(c), '구성표를 복사했어요'); });
+  $('#cr-back').addEventListener('click', goHomeOrIntro);
+}
+
+/* ───────── 이스터에그 ─────────
+   제작자 진우주: 시인이자 소설가, 우주와 녹차를 사랑하는 프리미엄 녹차 전문점 녹녹의 사장.
+   ① 보이는 것: 인트로 오른쪽 위에 떠 있는 작은 찻잔 행성을 누르면 ‘녹성’ 발견
+   ② 찾기 어려운 것: 왼쪽 위 로고(진우주)를 3초 동안 꾹 눌러 ‘우려내면’ 비밀 크루 · 녹차 모드
+   시는 직접 쓴 시로 바꿔 넣어도 돼요. 첫 줄은 제목이에요. */
+var EGG = {
+  poem1: '찻잔 속 은하\n뜨거운 물을 부으면\n찻잎이 먼저 기지개를 켜요\n초록이 번지는 동안\n나는 별 하나의 이름을 지어요',
+  poem2: '녹성에서 보내는 편지\n여기서는 하루가 찻잎 한 장만큼 길어요\n물이 식기를 기다리는 동안\n우리는 서로의 궤도를 조금씩 배워요\n누군가는 판을 벌이고, 누군가는 항로를 짜고\n누군가는 씨앗을 주워 오지요\n그러니 당신이 어느 별에서 왔든\n여기선 모두 한 잔의 크루예요'
+};
+function teacupInner(steam) {
+  var s = '';
+  if (steam) s += '<g fill="none" stroke="#CFF5C9" stroke-width="3" stroke-linecap="round" opacity=".75"><path d="M-9,-20 C-14,-27 -4,-31 -9,-39"/><path d="M6,-20 C1,-27 11,-31 6,-39"/></g>';
+  s += '<ellipse cx="0" cy="32" rx="40" ry="7" fill="#9FD0A6" opacity=".9"/>';
+  s += '<path d="M31,-2 C45,-2 45,17 27,17" fill="none" stroke="#5E9E6A" stroke-width="5" stroke-linecap="round"/>';
+  s += '<path d="M-32,-10 H32 C32,16 19,30 0,30 C-19,30 -32,16 -32,-10 Z" fill="#CDEBCF" stroke="#5E9E6A" stroke-opacity=".5" stroke-width="2"/>';
+  s += '<ellipse cx="0" cy="-10" rx="32" ry="7" fill="#7CBF6A"/><ellipse cx="-10" cy="-11.5" rx="9" ry="2" fill="#fff" opacity=".35"/>';
+  s += '<path d="M14,-10 C16,-15 22,-15 23,-11 C20,-9 17,-9 14,-10Z" fill="#3E8E4E"/>';
+  s += '<ellipse cx="-10" cy="8" rx="2.8" ry="3.6" fill="#2A2D4F"/><circle cx="-9" cy="6.6" r="1" fill="#fff"/><ellipse cx="10" cy="8" rx="2.8" ry="3.6" fill="#2A2D4F"/><circle cx="11" cy="6.6" r="1" fill="#fff"/>';
+  s += '<ellipse cx="-18" cy="15" rx="4.6" ry="2.6" fill="#FF8FA8" opacity=".55"/><ellipse cx="18" cy="15" rx="4.6" ry="2.6" fill="#FF8FA8" opacity=".55"/><path d="M-4,15 Q0,19 4,15" fill="none" stroke="#2A2D4F" stroke-width="2" stroke-linecap="round"/>';
+  return s;
+}
+function teacup(size, steam) { return '<svg width="' + size + '" height="' + size + '" viewBox="-50 -52 100 100" aria-hidden="true">' + teacupInner(steam) + '</svg>'; }
+function poemHtml(txt) { var ls = txt.split('\n'); return '<div class="poem"><b>' + esc(ls[0]) + '</b>' + ls.slice(1).map(esc).join('\n') + '</div>'; }
+function openModal(html) {
+  closeModal();
+  var back = document.createElement('div'); back.className = 'modal-back'; back.id = 'modal';
+  back.innerHTML = '<div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-h">' + html + '</div>';
+  document.body.appendChild(back);
+  back.addEventListener('click', function (e) { if (e.target === back || (e.target.closest && e.target.closest('[data-close]'))) closeModal(); });
+  var f = back.querySelector('[data-close]'); if (f) f.focus({ preventScroll: true });
+  back.scrollTop = 0;
+}
+function closeModal() { var m = $('#modal'); if (m) m.remove(); }
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+function leafRain() {
+  if (REDUCED) return;
+  for (var i = 0; i < 18; i++) {
+    var l = document.createElement('div'), dur = 5 + Math.random() * 4;
+    l.className = 'leaf'; l.setAttribute('aria-hidden', 'true');
+    l.style.left = (Math.random() * 100).toFixed(1) + 'vw'; l.style.animationDuration = dur.toFixed(2) + 's'; l.style.animationDelay = (Math.random() * 2).toFixed(2) + 's';
+    l.style.setProperty('--dx', ((Math.random() - 0.5) * 30).toFixed(0) + 'vw'); l.style.setProperty('--rot', ((Math.random() - 0.5) * 720).toFixed(0) + 'deg');
+    l.innerHTML = '<svg width="18" height="18" viewBox="-12 -12 24 24"><path d="M0,-10 C8,-6 8,6 0,10 C-8,6 -8,-6 0,-10Z" fill="#7CBF6A"/><path d="M0,-8 V8" stroke="#3E8E4E" stroke-width="1.4"/></svg>';
+    document.body.appendChild(l);
+    setTimeout(function (el) { return function () { el.remove(); }; }(l), (dur + 2.2) * 1000);
+  }
+}
+function eggFound() {
+  openModal('<div class="float" style="display:inline-block">' + teacup(110, true) + '</div>' +
+    '<span class="eb">숨은 행성 발견</span><h2 id="modal-h">녹성(綠星)을 찾았어요</h2>' +
+    '<p>지도에 없는 여섯 번째 행성. 이 우주를 만든 진우주가 태어난 별이에요. 녹성 사람들은 차 한 잔이 식기 전에 시 한 편을 쓰고, 시 한 편이 끝나기 전에 소설 하나를 시작한대요.</p>' +
+    poemHtml(EGG.poem1) +
+    '<p class="sig">녹성의 지구 대사관 · 프리미엄 녹차 전문점 <b>녹녹</b></p>' +
+    '<p class="hint">차는 서두르면 떫어요. 이 우주에 이름을 붙인 사람의 문패를 3초만 꾹 눌러 우려 보세요.</p>' +
+    '<div class="row"><button class="btn pri" data-close>닫기</button></div>');
+}
+function brewEgg() {
+  document.body.classList.add('nok'); leafRain();
+  openModal('<div class="float" style="display:inline-block">' + teacup(120, true) + '</div>' +
+    '<span class="eb">잘 우러났어요</span><h2 id="modal-h">비밀 크루 · 녹녹 시인</h2>' +
+    '<p class="sig">녹성 출신 · 시인 · 스물여섯 번째 자리</p>' +
+    '<p>시를 쓰다 소설을 쓰고, 소설을 쓰다 우주를 만든 사람. 25가지 유형 어디에도 없는 이 자리는 이 검사를 만든 진우주의 것이에요.</p>' +
+    poemHtml(EGG.poem2) +
+    '<p class="sig">— 진우주, 녹성에서 · 지구에서는 녹녹에서 차를 우려요</p>' +
+    '<p class="hint">녹차 모드가 켜졌어요. 새로고침하면 원래 우주로 돌아와요.</p>' +
+    '<div class="row"><button class="btn soft" id="nok-off">녹차 모드 끄기</button><button class="btn pri" data-close>닫기</button></div>');
+  $('#nok-off').addEventListener('click', function () { document.body.classList.remove('nok'); closeModal(); });
+}
+/* 로고: 짧게 누르면 홈, 3초 꾹 누르면 우려내기 */
+(function () {
+  var logo = $('#home'), timer = null, glow = null, fired = false;
+  function start() { if (timer) return; fired = false; glow = setTimeout(function () { logo.classList.add('steeping'); }, 800); timer = setTimeout(function () { timer = null; fired = true; logo.classList.remove('steeping'); brewEgg(); }, 3000); }
+  function stop() { clearTimeout(timer); clearTimeout(glow); timer = null; logo.classList.remove('steeping'); }
+  logo.addEventListener('pointerdown', function (e) { if (e.button === 0 || e.pointerType !== 'mouse') start(); });
+  ['pointerup', 'pointerleave', 'pointercancel'].forEach(function (ev) { logo.addEventListener(ev, stop); });
+  logo.addEventListener('keydown', function (e) { if ((e.key === 'Enter' || e.key === ' ') && !e.repeat) { e.preventDefault(); start(); } });
+  logo.addEventListener('keyup', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); var was = fired; stop(); fired = false; if (!was) goHomeOrIntro(); } });
+  logo.addEventListener('click', function (e) { if (e.detail === 0) return; if (fired) { fired = false; return; } goHomeOrIntro(); });
+  logo.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+})();
+
 function fallbackCopy(txt) { var ta = document.createElement('textarea'); ta.value = txt; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (e) {} ta.remove(); }
 function toast(msg) { var t = $('#toast'); t.textContent = msg; t.classList.add('on'); setTimeout(function () { t.classList.remove('on'); }, 1600); }
 
@@ -1629,7 +2353,34 @@ function toast(msg) { var t = $('#toast'); t.textContent = msg; t.classList.add(
   document.addEventListener('focusout', function () { tip.classList.remove('on'); });
 })();
 
-window.__cheonseong = { rankAll: rankAll, randomAnswers: randomAnswers, compatOf: compatOf, weatherOf: weatherOf, clarityOf: clarityOf, specsOf: specsOf, makeCard: makeCard, ITEMS: ITEMS, score: score, state: state, CUT: CUT, NORM: NORM };
+window.__cheonseong = { rankAll: rankAll, randomAnswers: randomAnswers, compatOf: compatOf, weatherOf: weatherOf, clarityOf: clarityOf, specsOf: specsOf, makeCard: makeCard, ITEMS: ITEMS, score: score, state: state, CUT: CUT, NORM: NORM,
+  TYPES: TYPES, ROLE: ROLE, typeTitle: typeTitle, liteRes: liteRes, renderResult: renderResult, renderHome: renderHome, obsSet: obsSet, obsResult: obsResult, OBS: OBS, crewSummary: crewSummary, openCrew: openCrew, openObs: openObs, getProfile: getProfile, brewEgg: brewEgg };
+
+/* ───────── 시작 ───────── */
+(function init() {
+  $('#role-row').innerHTML = ROLE.map(function (r, i) { return '<span>' + roleBadge(i, 24) + r.name + '</span>'; }).join('');
+  $('#egg-cup').innerHTML = teacup(44, true);
+  $('#peek2').innerHTML = mascot(2, 70);
+  renderPick();
+  $('#go-pick').addEventListener('click', openPick);
+  $('#pick-back').addEventListener('click', goHomeOrIntro);
+  $('#pick-go').addEventListener('click', pickGo);
+  $('#p-find').addEventListener('click', pickFind);
+  $('#p-to-test').addEventListener('click', function () { show('s-birth'); });
+  $('#p-date').max = todayStr();
+  $('#egg-cup').addEventListener('click', eggFound);
+  document.addEventListener('keydown', function (e) {
+    if ($('#s-obs').hidden || !$('#o-a') || $('#modal') || e.altKey || e.ctrlKey || e.metaKey) return;
+    if (e.key === '1' || e.key === 'a' || e.key === 'A') { e.preventDefault(); obsAnswer('a'); }
+    else if (e.key === '2' || e.key === 'b' || e.key === 'B') { e.preventDefault(); obsAnswer('b'); }
+    else if (e.key === 'Backspace') { e.preventDefault(); obsBack(); }
+  });
+  state.profile = getProfile();
+  var shared = crewFromHash();
+  if (shared) { clearHash(); openCrew(shared); }
+  else if (state.profile) renderHome();
+  window.addEventListener('hashchange', function () { var c = crewFromHash(); if (c) { clearHash(); openCrew(c); } });
+})();
 })();
 </script>
 </body>
